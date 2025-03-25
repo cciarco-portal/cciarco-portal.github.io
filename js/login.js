@@ -3,7 +3,7 @@ import { getAuth, setPersistence, browserSessionPersistence, signInWithEmailAndP
 
 // Firebase Config
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
     authDomain: "cciarco-portal.firebaseapp.com",
     projectId: "cciarco-portal",
     storageBucket: "cciarco-portal.firebasestorage.app",
