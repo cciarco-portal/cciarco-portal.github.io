@@ -1,28 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const loginForm = document.getElementById("login-form");
-  if (loginForm) {
-    loginForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value;
-      const accessLevels = {
-        admin_procurement: 'admin123',
-        accounting_finance: 'finance123',
-        service_fulfillment: 'service123',
-        sales_marketing: 'sales123',
-        human_capital: 'human123',
-        technical_services: 'tech123',
-        project_management: 'project123',
-        cciarco: 'cciarco123',
-        gad: 'gadmode'
-      };
-      if (accessLevels[username] && accessLevels[username] === password) {
-        console.log("Login successful. Redirecting to home.html...");
-        window.location.href = "html/home.html";
-      } else {
-        console.log("Login failed. Incorrect username or password.");
-        alert("Incorrect username or password. Please try again.");
-      }
-    });
-  }
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+// Firebase Config (Use your actual config)
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "cciarco-portal.firebaseapp.com",
+    projectId: "cciarco-portal",
+    storageBucket: "cciarco-portal.firebasestorage.app",
+    messagingSenderId: "513140257536",
+    appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+    measurementId: "G-0J0T2WDJJQ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Listen for login
+document.getElementById("loginBtn").addEventListener("click", function () {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            sessionStorage.setItem("userLoggedIn", "true"); // Save session
+            window.location.href = "html/home.html"; // Redirect after login
+        })
+        .catch(error => alert("Login failed: " + error.message));
+});
+
+// Check if user is logged in (Optional for navbar)
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        sessionStorage.removeItem("userLoggedIn");
+    }
 });
