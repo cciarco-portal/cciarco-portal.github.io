@@ -41,13 +41,13 @@ document.getElementById("login-form").addEventListener("submit", function (event
         });
 });
 
-// 🔥 Google Login (Only @tangentsolutionsin.com)
+// 🔥 Google Login (Only @tangentsolutionsinc.com)
 document.getElementById("google-login").addEventListener("click", function () {
     signInWithPopup(auth, googleProvider)
         .then((result) => {
             const user = result.user;
-            if (!user.email.endsWith("@tangentsolutionsin.com")) {
-                alert("Only @tangentsolutionsin.com emails are allowed.");
+            if (!user.email.endsWith("@tangentsolutionsinc.com")) {
+                alert("Only @tangentsolutionsinc.com emails are allowed.");
                 auth.signOut(); // Logout unauthorized users
                 return;
             }
