@@ -1,0 +1,46 @@
+/* Responsive styles for all pages */
+@media only screen and (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 10px;
+    }
+    .navbar {
+        /* Hide navbar by default in mobile view */
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar.active {
+        /* Show navbar when active */
+        display: flex;
+    }
+    .nav-link {
+        margin: 0.5rem 0;
+    }
+    /* Login container */
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+    /* Text scaling */
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+    /* Grid layout adjustments */
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Medium screens */
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .document-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

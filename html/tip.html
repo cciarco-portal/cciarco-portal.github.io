@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIP</title>
+  <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
+
+  <!-- box icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- custom css -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<header>
+  <div class="header" data-aos="fade-down">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="../images/CCIARCO.ico" alt="CCIARCO Logo" class="logo-img">
+      </a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="index.html" class="nav-link" data-aos="fade-right">Home</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="hub.html" class="nav-link" data-aos="fade-right">Hub</a>
+        <a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>
+        <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- TIP Section -->
+<section class="home" id="home">
+  <div class="home-content" data-aos="fade-up">
+    <h3>Welcome to </h3>
+    <h1>TIP</h1>
+    <p>
+      The Tangent Interdepartmental Portfolio (TIP) consolidates key business processes that guide how we implement and maintain our management systems, ensuring that all departments are aligned and working towards common goals.
+    </p>
+    <div style="text-align: left; margin-top: 20px; margin-bottom: 20px; margin-left: 20px;">
+      <a href="https://drive.google.com/file/d/1GprohKz1vGg0y9FMBj7oVehBauuCjjNi/view" class="btn" target="_blank">Learn More</a>
+    </div>
+  </div>
+  <div class="home-img" data-aos="fade-left">
+    <img src="../images/tip.png" alt="Department Image">
+  </div>
+</section>
+
+<!-- Tangent Background Section -->
+<section class="tanbg" id="tanbg">
+  <h2 class="heading" data-aos="fade-down"><span>Tangent </span>Background</h2>
+  <p data-aos="fade-up">
+    Tangent Solutions, Inc. also called as Tangent, is an electronic payment service provider for acquiring
+    banks in the Philippines. Tangent provides card present transactions processing payment gateway for
+    card present transactions using EDC machines. We also provide payment gateway which routes the
+    transactions to the acquiring banks.
+    Tangent also provides merchants with POS devices to allow the merchants to accept payments using
+    credit and/or debit card.
+  </p>
+</section>
+
+<!-- Tangent Organizational Structure Section -->
+<section class="tanos" id="tanos">
+  <h2 class="heading" data-aos="fade-down"><span>Tangent Organizational Structure</span></h2>
+  <div class="structure-image" data-aos="fade-up">
+    <!-- Added id for image click trigger -->
+    <img src="../images/to1.png" alt="Tangent Organizational Structure" id="zoomTrigger">
+  </div>
+</section>
+
+<!-- Updated Modal for zoomable image with zoom controls placed under the image -->
+<div id="imageModal" class="modal">
+  <span class="close" id="modalClose">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="modal-controls">
+    <button id="zoomOut">-</button>
+    <button id="resetZoom"><i class='bx bx-search'></i></button>
+    <button id="zoomIn">+</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2024 by CCIARCO | All Rights Reserved.</p>
+  </div>
+
+  <div class="footer-iconTop">
+    <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 200,
+    easing: 'ease-in-out',
+  });
+</script>
+<script src="../js/script.js"></script>
+
+<!-- Add modal JS at the end of the body -->
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const zoomTrigger = document.getElementById("zoomTrigger");
+  const modalClose = document.getElementById("modalClose");
+  const zoomInBtn = document.getElementById("zoomIn");
+  const zoomOutBtn = document.getElementById("zoomOut");
+  const resetZoomBtn = document.getElementById("resetZoom");
+  const defaultZoom = 1.2;
+  let currentScale = defaultZoom;
+  let offsetX = 0, offsetY = 0;
+  let isPanning = false, startX = 0, startY = 0;
+
+  zoomTrigger.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    currentScale = defaultZoom;
+    offsetX = 0; offsetY = 0;
+    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+  }
+  
+  modalClose.onclick = function() {
+    modal.style.display = "none";
+    currentScale = defaultZoom;
+    offsetX = 0; offsetY = 0;
+    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+  }
+  
+  zoomInBtn.onclick = function() {
+    currentScale += 0.1;
+    modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+  }
+  
+  zoomOutBtn.onclick = function() {
+    currentScale = Math.max(0.1, currentScale - 0.1);
+    modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+  }
+  
+  resetZoomBtn.onclick = function() {
+    currentScale = defaultZoom;
+    offsetX = 0; offsetY = 0;
+    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+  }
+  
+  // Panning for TIP modal
+  modalImg.addEventListener("mousedown", function(e) {
+    isPanning = true;
+    startX = e.clientX - offsetX;
+    startY = e.clientY - offsetY;
+    e.preventDefault();
+  });
+  window.addEventListener("mousemove", function(e) {
+    if (isPanning) {
+      offsetX = e.clientX - startX;
+      offsetY = e.clientY - startY;
+      modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+    }
+  });
+  window.addEventListener("mouseup", function() {
+    isPanning = false;
+  });
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      currentScale = defaultZoom;
+      offsetX = 0; offsetY = 0;
+      modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+    }
+  }
+  
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+      currentScale = defaultZoom;
+      offsetX = 0; offsetY = 0;
+      modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+    }
+  });
+</script>
+</body>
+</html>

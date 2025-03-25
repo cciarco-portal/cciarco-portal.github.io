@@ -1,0 +1,1908 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth; /* Add smooth scrolling */
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: rgb(51, 58, 72);
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: scroll;
+}
+
+section {
+    min-height: 50vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Header Styles */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    padding: 0.01rem 1%; /* Adjust padding to decrease the header height */
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 90;
+    margin: 0 auto; /* Center if using max-width */
+}
+
+.header .sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.logo-img {
+    padding-left: 30px;
+    height: 50px; /* Adjust logo size */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* Home Section Styles */
+/* Used in: Index.html, tip.html */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-img img {
+    padding-top: 50px;
+    width: 70%;
+    height: auto;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.home-content {
+    flex: .8;
+    margin-right: 20px;
+}
+
+.home-content p {
+    text-align: justify;
+    margin-right: 20px;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+/* Heading Styles */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+/* About Content Styles */
+/* Used in: Index.html, abt.html */
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    text-align: justify;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+/* Services Section Styles */
+/* Used in: Index.html */
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem;
+    height: 38rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/* Department Section Styles */
+/* Used in: Index.html */
+.department {
+    background: var(--second-bg-color);
+}
+
+.department h2 {
+    margin-bottom: 4rem;
+}
+
+.department-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.department-container .department-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color); 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    justify-content: flex-start; /* Align items at the start */
+}
+
+.department-box img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover; /* Ensure the image covers the space without stretching */
+    transition: 5s ease;
+}
+
+.department-box:hover img {
+    transform: scale(1.1);
+}
+
+.department-box .department-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;  
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.department-box:hover .department-layer {
+    transform: translateY(0);
+}
+
+.department-layer h4 {
+    font-size: 2rem; /* Responsive font size */
+}
+
+.department-layer p {
+    font-size: 1.4rem; /* Responsive font size */
+    margin: .3rem 0 1rem;
+}
+
+.department-layer {
+    flex-grow: 1; /* Allow the text layer to grow and fill the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    text-align: center;
+    padding: 1rem; /* Adjust padding as needed */
+}
+
+.department-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+.department-layer a {
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+/* Contact Section Styles */
+/* Used in: Index.html */
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* Team Section Styles */
+/* Used in: Index.html, abt.html */
+.team {
+    background: var(--second-bg-color);
+    padding: 10rem 9% 2rem;
+}
+
+.team h2 {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure text doesn't overflow */
+}
+
+.team-member img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease; /* Add transition for image */
+}
+
+.team-member:hover img {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+.member-details {
+    position: absolute;
+    bottom: -50%; /* Initially position below the image */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+    transition: bottom 0.3s ease; /* Add transition for sliding effect */
+}
+
+.team-member:hover .member-details {
+    bottom: 30%; /* Slide the details into view on hover */
+}
+
+.member-name,
+.member-position {
+    margin: 0.5rem 0;
+}
+
+/* Media Queries */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .department {
+        padding-bottom: 7rem;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+    /* Navbar container styles */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Center the navbar */
+        width: 10%; /* Adjust this value to decrease/increase width */
+        max-width: 200px; /* Optional: Set a max width if needed */
+        padding: 0.5rem 0; /* Adjust padding as needed */
+        background: var(--second-bg-color);
+        border-top: .1rem solid var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    /* Navbar links styles */
+    .navbar a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 1rem 2rem; /* Adjust margin as needed */
+        text-align: left; /* Center text if necessary */
+        scroll-behavior: smooth; /* Add smooth scrolling */
+    }
+
+    /* When navbar is active, display it */
+    .navbar.active {
+        display: block;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .department h2 {
+        margin-bottom: 3rem;
+    }
+
+    .department-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .department-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .contact form .input-box input {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img {
+        font-size: 90vw;
+    }
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+/* Specific Section Styles */
+/* Used in: Index.html */
+section.department, section.corpcom, section.riskmanagement, section.rns, section.lnd, section.cnb, section.tanbg {
+    padding: 10rem 9% 2rem;
+    min-height: 90vh;
+    background: var(--second-bg-color);
+}
+
+/* Used in: compliance.html, abt.html */
+section.compliance, section.internalaudit, section.team {
+    padding: 10rem 9% 2rem;
+    min-height: 80vh;
+    background: var(--bg-color);
+}
+
+/* Section Heading Styles */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+.section-heading {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+    color: var(--main-color);
+}
+
+/* Section Content Styles */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+.section-content {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Navbar Link Styles */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+.navbar a {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-left: 2rem;
+    transition: .3s;
+    scroll-behavior: smooth; /* Add smooth scrolling */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* Scroll Container Styles */
+/* Used in: Index.html */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    padding: 20px 0; /* Padding around the scroll area */
+}
+
+.mini-card-grid {
+    display: flex; /* Change from grid to flex for horizontal scroll */
+    gap: 0; /* Space between cards */
+    position: relative;
+}
+
+.mini-card {
+    flex: 0 0 250px; /* Set a fixed width for each card */
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(85deg, var(--bg-color), var(--second-bg-color));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+    margin: 0;
+}
+
+.mini-card a {
+    text-decoration: none;
+}
+
+.mini-card h3 a {
+    color: #fff !important;
+}
+
+.mini-card .tags {
+    margin: 0 0 0.5rem;
+}
+
+.mini-card .author-name {
+    color: #fff;
+}
+
+.mini-card time {
+    display: block;
+    margin: 0 0 0.25rem;
+    color: #777;
+}
+
+.mini-card time strong {
+    font-size: 1rem;
+    color: #d4d4d4;
+}
+
+.mini-card:hover {
+    transform: translateY(-1rem) rotate(3deg);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mini-card .author-row {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.mini-card .author-row img {
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.mini-card-title {
+    font-size: 2.3rem;
+    margin: 0 0 1rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px; /* Set the height of the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.tags a {
+    color: white;
+    font-size: 1.5;
+}
+
+/* General styling for the website */
+/* Used in: Index.html, tip.html, rprts.html, hub.html, compliance.html, abt.html */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the login popup */
+/* Used in: Index.html */
+.login-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above all other content */
+}
+
+.login-popup .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.login-popup .popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.login-popup .popup-content input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-popup .popup-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-popup .popup-content button:hover {
+    background: #0056b3;
+}
+
+.login-popup .popup-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Hide page content initially */
+.hidden-content {
+    display: none;
+}
+
+.corpcom p {
+    font-size: 1.6rem; /* Adjust this value as needed */
+    text-align: justify;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    padding: 0;
+}
+
+.internalaudit p {
+    font-size: 1.6rem;
+    text-align: justify;
+    margin-top: 1.5rem;
+    margin-bottom: 7rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding: 0;     
+}
+
+.compliance p {
+    font-size: 1.6rem;
+    text-align: justify;
+    margin-top: 1.5rem;
+    margin-bottom: 7rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    padding: 0;     
+}
+
+.tanbg p {
+    font-size: 1.6rem; /* Adjust this value as needed */
+    text-align: justify;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    padding: 0;
+}
+
+.posterm {
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Apply the background and padding to the parent container */
+.content-container {
+    padding: 5rem 9% 2rem; /* Adjust padding as per your requirements */
+    min-height: 100vh; /* Ensure it takes up at least the full viewport height */
+    background: var(--second-bg-color); /* Set the background color */
+}
+
+/* Overview section styling */
+.overview {
+    background-color: var(--second-bg-color); /* No background, it will inherit the parent container's background */
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;   /* Optional: set a max width for larger screens */
+    margin: 0 auto;      /* Center the container */
+    padding: 10rem 9% 2rem;
+    min-height: 90vh;
+}
+
+/* Text section for the "overview" */
+.overview h2 {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 50px;
+}
+
+.overview h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.overview p, .overview ul {
+    font-size: 1.5rem;
+    color: white;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Styling for unordered list */
+.overview ul {
+    margin-left: 40px;
+    list-style-type: disc;
+}
+
+.overview ul li {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Styling for blockquote */
+.overview blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--main-color);
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Container for the logo and text side by side */
+.reputation-container {
+    display: flex;               /* Use flexbox for horizontal layout */
+    align-items: flex-start;     /* Align items at the start (top) of the container */
+    gap: 20px;                   /* Adds space between logo and text */
+    margin-bottom: 20px;         /* Adds space below the section */
+}
+
+/* Style for the logo */
+.logo-container {
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.logo {
+    width: 150px;   /* Adjust the width of the logo */
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Style for the text container */
+.text-container {
+    max-width: 600px; /* Optional: limit the width of the text */
+    flex-grow: 1;     /* Allow text container to grow and take available space */
+}
+
+/* Style for heading (h3) */
+.text-container h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+/* Style for paragraphs */
+.text-container p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Style for unordered list */
+.text-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.text-container ul li {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Products Section */
+.products {
+    padding: 60px 5%;
+    background-color: var(--second-bg-color);
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: var(--main-color);
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+}
+
+.product-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* General Section Styling */
+section {
+    padding: 60px 5%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var (--main-color);
+}
+
+/* Introduction Section */
+.introduction {
+    background-color: var(--second-bg-color);
+    padding: 40px;
+    border-left: 4px solid var(--main-color);
+}
+
+.introduction p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+/* Document Categories Section */
+.document-categories {
+    padding: 50px 0;
+    background-color: var(--bg-color);
+}
+
+.document-categories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--main-color)
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    background-color: var (--second-bg-color);
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.category-card .category-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var (--main-color);
+    font-weight: bold;
+}
+
+.category-card .category-link:hover {
+    text-decoration: underline;
+}
+
+/* Policies Flipbox */
+.policies {
+    background-color: var(--bg-color);
+    padding: 40px;
+  
+}
+
+.policies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.flipbox {
+    background: var(--bg-color);
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Enables 3D effect */
+}
+
+.flipbox-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s ease-in-out;
+}
+
+.flipbox:hover .flipbox-inner {
+    transform: rotateY(180deg); /* Flip the box */
+}
+
+.flipbox-front,
+.flipbox-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.flipbox-front {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+}
+
+.flipbox-back {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: rotateY(180deg);
+}
+
+.flipbox h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.flipbox p {
+    font-size: 1rem;
+}
+
+.flipbox ul {
+    list-style: none;
+    padding: 0;
+}
+
+.flipbox ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px; /* Same padding as the search button */
+    background: var(--main-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.read-more:hover {
+    background: var(--hover-color);
+    color: var(--bg-color);
+}
+
+/* Vision, Mission, and Quality Policy Section */
+.vmq {
+    padding: 50px 9%;
+    background-color: var(--second-bg-color);
+    text-align: center;
+}
+
+/* VMQ Section */
+.vmq-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.vmq-item {
+    flex: 1 1 calc(30% - 20px);
+    background-color: var(--bg-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.vmq-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+}
+
+.vmq-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.vmq-item h3 {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.vmq-item p {
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.vmq-item ul {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.vmq-item ul li {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .vmq-container {
+        flex-direction: column;
+    }
+
+    .vmq-item {
+        flex: 1 1 100%;
+    }
+}
+
+.footer {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem 9%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-column {
+    flex: 1 1 calc(25% - 1rem);
+    min-width: 200px;
+}
+
+.footer-logo {
+    width: 90px;
+    margin-bottom: 1rem;
+}
+
+.footer-socials a {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--second-bg-color);
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.footer-column p,
+.footer-column ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--main-color);
+}
+
+.footer-column ul li i {
+    margin-right: 0.5rem;
+    color: var(--main-color);
+}
+
+.footer p a {
+    text-decoration: none;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.footer p a:hover {
+    color: var(--second-bg-color);
+}
+
+/* Dashboard Section */
+.dashboard {
+    padding: 60px 5%;
+    background-color: var(--second-bg-color);
+    text-align: center;
+}
+
+.dashboard h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: var(--main-color);
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dashboard-item {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+}
+
+.dashboard-item h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.dashboard-item canvas {
+    margin-top: 20px;
+}
+
+.kpi-tile {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-top: 20px;
+}
+
+.progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 10;
+}
+
+.progress-circle .bg {
+    stroke: #ddd;
+}
+
+.progress-circle .progress {
+    stroke: var(--main-color);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-circle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var (--main-color);
+}
+
+ .vmq-item, .flipbox, .product-card, .dashboard-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vmq-item:hover, .flipbox:hover, .product-card:hover,  .dashboard-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard Images Section */
+.dashboard-images {
+  padding: 4rem 5%;
+  background: var(--second-bg-color);
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.dashboard-images h2 {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.dashboard-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.dashboard-image-item {
+  flex: 1 1 250px;
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-image-item:hover {
+  transform: translateY(-10px);
+}
+
+.dashboard-image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.dashboard-image-item h3 {
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+/* AOS Animations */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-property: opacity, transform;
+}
+
+[data-aos="fade-down"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"] {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition-property: opacity, transform;
+}
+
+[data-aos="fade-right"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+    opacity: 0;
+    transform: translateX(20px);
+    transition-property: opacity, transform;
+}
+
+[data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add styles for scrollable document grid */
+.document-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-height: 500px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    animation: fadeIn var(--transition-duration) ease-in-out;
+}
+
+/* Add styles for pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration);
+}
+
+.pagination button:hover {
+    background-color: var(--hover-color);
+}
+
+/* ...existing code... */
+
+.document-item {
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), color var(--transition-duration), transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.document-item:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.document-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.document-item.active-document {
+    border: 2px solid var(--hover-color);
+}
+
+/* Add subtle animation for document items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ...existing code... */
+.structure-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.structure-image img {
+  width: 80%;       /* adjust this value as needed */
+  max-width: 700px; /* optional: set a maximum width */
+  height: auto;     /* maintain aspect ratio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* ...existing code... */
+.image-slider {
+    position: relative;
+    width: 100%; /* Ensure it takes the full width */
+    max-width: 100%; /* Prevent extra space */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+  }
+  
+  .slides {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 100%; /* Ensure full width */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+  }
+  
+  .slide img {
+    width: 100%; /* Make images fit the slider */
+    height: auto;
+    object-fit: contain; /* Adjust to 'cover' if necessary */
+  }
+  
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+
+.prev {
+  left: -50px; /* Move the button outside the image */
+}
+
+.next {
+  right: -50px; /* Move the button outside the image */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ...existing code... */
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: var(--main-color);
+    color: var (--text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration);
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+  color: var(--bg-color);
+}
+
+/* ...existing code... */
+
+/* Better styling for main content */
+main {
+  /* Reserve space for the fixed header */
+  padding: 120px 9% 2rem;
+  background: var(--bg-color);
+}
+
+/* New container for main content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(31,36,45,1) 0%, rgba(51,58,72,1) 100%);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Optionally, update specific sections */
+.reports-content {
+  /* Now inside .main-content, it gets inherited styling */
+  color: var(--text-color);
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Improve styling for main content sections */
+main {
+  padding: 100px 9% 2rem;  /* Increased top padding to avoid overlap with the fixed header */
+  background-color: var(--bg-color);
+}
+
+.reports-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05); /* slight contrast background for readability */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.reports-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--main-color); /* Emphasize the title */
+}
+
+.reports-content p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Testimonials Section Styles */
+.testimonials {
+  background: linear-gradient(180deg, rgba(31,36,45,1) 0%, rgba(51,58,72,1) 100%);
+  padding: 4rem 5%;
+  text-align: center;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.testimonials .heading {
+  margin-bottom: 2rem;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-item h4 {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+/* Modal styles for zoomable image */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  z-index: 1001;  /* Ensures image is above the modal background */
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;  /* Above other modal elements */
+}
+
+.modal-controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0;  
+  gap: 20px;
+  z-index: 1001;  /* Stacked with the image */
+}
+
+/* ...existing code... */
+
+/* Updated Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border: 4px solid var(--main-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1002;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+}
+
+.modal-controls {
+  position: relative;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1001;
+}
+
+.modal-controls button {
+  background-color: var(--main-color);
+  border: none;
+  color: var(--bg-color);
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-controls button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* ...existing code... */
