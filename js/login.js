@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-import { getAuth, setPersistence, browserSessionPersistence, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
 // Firebase Config
 const firebaseConfig = {
@@ -15,23 +15,47 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
-// Ensure session persistence
-setPersistence(auth, browserSessionPersistence).then(() => {
-    console.log("Session persistence set!");
-});
+// 🔑 Email/Password Login (Only @tangentsolutions.com)
+document.getElementById("login-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-document.getElementById("loginBtn").addEventListener("click", function () {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    const email = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+
+    // Check if email is from @tangentsolutions.com
+    if (!email.endsWith("@tangentsolutions.com")) {
+        alert("Only @tangentsolutions.com emails are allowed.");
+        return;
+    }
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log("User logged in:", userCredential.user);
-            window.location.href = "html/home.html";
+            console.log("Login successful!", userCredential.user);
+            window.location.href = "html/home.html"; // Redirect after login
         })
-        .catch(error => {
-            console.error("Login failed:", error);
+        .catch((error) => {
+            console.error(error);
             alert("Login failed: " + error.message);
+        });
+});
+
+// 🔥 Google Login (Only @tangentsolutionsin.com)
+document.getElementById("google-login").addEventListener("click", function () {
+    signInWithPopup(auth, googleProvider)
+        .then((result) => {
+            const user = result.user;
+            if (!user.email.endsWith("@tangentsolutionsin.com")) {
+                alert("Only @tangentsolutionsin.com emails are allowed.");
+                auth.signOut(); // Logout unauthorized users
+                return;
+            }
+            console.log("Google login successful!", user);
+            window.location.href = "html/home.html"; // Redirect
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("Google login failed: " + error.message);
         });
 });
