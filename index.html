@@ -99,8 +99,8 @@
             const email = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            if (!email.endsWith("@tangentsolutions.com")) {
-                alert("Only @tangentsolutions.com emails are allowed.");
+            if (!email.endsWith("@tangentsolutionsinc.com")) {
+                alert("Only @tangentsolutionsinc.com emails are allowed.");
                 return;
             }
 
@@ -113,8 +113,8 @@
             signInWithPopup(auth, googleProvider)
                 .then((result) => {
                     const user = result.user;
-                    if (!user.email.endsWith("@tangentsolutionsin.com")) {
-                        alert("Only @tangentsolutionsin.com emails are allowed.");
+                    if (!user.email.endsWith("@tangentsolutionsinc.com")) {
+                        alert("Only @tangentsolutionsinc.com emails are allowed.");
                         auth.signOut();
                         return;
                     }
