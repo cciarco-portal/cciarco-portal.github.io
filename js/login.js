@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         gad: 'gadmode'
       };
       if (accessLevels[username] && accessLevels[username] === password) {
-        console.log("Login successful. Redirecting to index.html...");
+        console.log("Login successful. Redirecting to home.html...");
         window.location.href = "html/home.html";
       } else {
         console.log("Login failed. Incorrect username or password.");
