@@ -233,21 +233,6 @@
     }
   });
 </script>
-<script src="../js/script.js"></script>
-<button id="logoutBtn">Logout</button>
-
-<script type="module">
-    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
-
-    const auth = getAuth();
-    document.getElementById("logoutBtn").addEventListener("click", function () {
-        signOut(auth).then(() => {
-            sessionStorage.removeItem("userLoggedIn"); // Clear session
-            window.location.href = "../index.html"; // Redirect to login
-        }).catch(error => console.log(error));
-    });
-</script>
-
 
 
 </body>
