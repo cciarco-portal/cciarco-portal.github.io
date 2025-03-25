@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-// Firebase Configuration
+// Firebase Config (Replace with your actual config)
 const firebaseConfig = {
-    apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+    apiKey: "YOUR_API_KEY",
     authDomain: "cciarco-portal.firebaseapp.com",
     projectId: "cciarco-portal",
     storageBucket: "cciarco-portal.firebasestorage.app",
@@ -16,27 +16,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Set persistent login
-setPersistence(auth, browserLocalPersistence)
-    .then(() => {
-        console.log("Persistence set to local storage.");
-    })
-    .catch((error) => {
-        console.error("Error setting persistence:", error);
-    });
-
-// Login form submission
-document.getElementById("login-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+document.getElementById("loginBtn").addEventListener("click", function () {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log("Login successful!");
-            window.location.href = "html/home.html"; // Redirect to home page
+            console.log("User logged in:", userCredential.user); // Debugging
+            sessionStorage.setItem("userLoggedIn", "true");
+            window.location.href = "html/home.html"; // Redirect to home
         })
-        .catch((error) => {
+        .catch(error => {
+            console.error("Login failed:", error);
             alert("Login failed: " + error.message);
         });
+});
+
+// Debugging: Check if user is detected on load
+onAuthStateChanged(auth, (user) => {
+    console.log("Auth state changed:", user);
 });
