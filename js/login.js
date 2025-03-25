@@ -25,8 +25,8 @@ document.getElementById("login-form").addEventListener("submit", function (event
     const password = document.getElementById("password").value;
 
     // Check if email is from @tangentsolutions.com
-    if (!email.endsWith("@tangentsolutions.com")) {
-        alert("Only @tangentsolutions.com emails are allowed.");
+    if (!email.endsWith("@tangentsolutionsinc.com")) {
+        alert("Only @tangentsolutionsinc.com emails are allowed.");
         return;
     }
 
