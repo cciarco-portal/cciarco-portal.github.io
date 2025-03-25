@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-// Firebase Config (Use your actual config)
+// Firebase Configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
     authDomain: "cciarco-portal.firebaseapp.com",
     projectId: "cciarco-portal",
     storageBucket: "cciarco-portal.firebasestorage.app",
@@ -16,22 +16,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Listen for login
-document.getElementById("loginBtn").addEventListener("click", function () {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+// Set persistent login
+setPersistence(auth, browserLocalPersistence)
+    .then(() => {
+        console.log("Persistence set to local storage.");
+    })
+    .catch((error) => {
+        console.error("Error setting persistence:", error);
+    });
+
+// Login form submission
+document.getElementById("login-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            sessionStorage.setItem("userLoggedIn", "true"); // Save session
-            window.location.href = "html/home.html"; // Redirect after login
+        .then((userCredential) => {
+            console.log("Login successful!");
+            window.location.href = "html/home.html"; // Redirect to home page
         })
-        .catch(error => alert("Login failed: " + error.message));
-});
-
-// Check if user is logged in (Optional for navbar)
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        sessionStorage.removeItem("userLoggedIn");
-    }
+        .catch((error) => {
+            alert("Login failed: " + error.message);
+        });
 });
