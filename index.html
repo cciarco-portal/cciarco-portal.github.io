@@ -76,7 +76,24 @@
         <button id="google-login" class="google-btn">Login with Google</button>
     </div>
 
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+            authDomain: "cciarco-portal.firebaseapp.com",
+            projectId: "cciarco-portal",
+            storageBucket: "cciarco-portal.firebasestorage.app",
+            messagingSenderId: "513140257536",
+            appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+            measurementId: "G-0J0T2WDJJQ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const googleProvider = new GoogleAuthProvider();
+
         document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault();
             const email = document.getElementById("username").value;
@@ -87,17 +104,23 @@
                 return;
             }
 
-            // Dummy authentication - Replace with your actual backend authentication
-            if (password === "password123") { 
-                alert("Login successful!");
-                window.location.href = "html/home.html";
-            } else {
-                alert("Invalid email or password.");
-            }
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => window.location.href = "html/home.html")
+                .catch(error => alert("Login failed: " + error.message));
         });
 
         document.getElementById("google-login").addEventListener("click", function () {
-            alert("Google login is not available right now.");
+            signInWithPopup(auth, googleProvider)
+                .then((result) => {
+                    const user = result.user;
+                    if (!user.email.endsWith("@tangentsolutionsin.com")) {
+                        alert("Only @tangentsolutionsin.com emails are allowed.");
+                        auth.signOut();
+                        return;
+                    }
+                    window.location.href = "html/home.html";
+                })
+                .catch(error => alert("Google login failed: " + error.message));
         });
     </script>
 
