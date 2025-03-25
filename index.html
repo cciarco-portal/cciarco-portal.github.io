@@ -130,23 +130,72 @@
                 <path fill="#1A2C43" d="M0,128L30,160C60,192,120,256,180,266.7C240,277,300,235,360,208C420,181,480,171,540,144C600,117,660,85,720,85C780,85,840,117,900,144C960,171,1020,192,1080,213.3C1140,235,1200,245,1260,213.3C1320,181,1380,107,1410,64L1440,21L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
             </svg>
         </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCIARCO Portal</title>
+    <link rel="icon" href="images/CCIARCO.ico" type="image/x-icon">
+    <style>
+        body { background: #141E30; color: white; text-align: center; padding: 20px; }
+        .login-container { width: 300px; margin: auto; padding: 20px; background: #1A2C43; border-radius: 10px; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        button { background: #00B0FF; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
 
-        <!-- Login container -->
-        <div class="login-container">
-            <img src="images/CCIARCO.png" class="logo" alt="CCIARCO Logo">
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
-                </div>
-                <button type="submit">SUBMIT</button>
-            </form>
-        </div>
-    <script src="js/login.js"></script>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Register</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import Firebase libraries
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+        // 🔹 Replace with YOUR Firebase Config
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Login function
+        document.getElementById("loginBtn").addEventListener("click", function () {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    alert("Login successful!");
+                    window.location.href = "home.html"; // Redirect after login
+                })
+                .catch(error => alert("Login failed: " + error.message));
+        });
+
+        // Register function
+        document.getElementById("registerBtn").addEventListener("click", function () {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => alert("Registration successful! Please log in."))
+                .catch(error => alert("Registration failed: " + error.message));
+        });
+    </script>
 </body>
 </html>
