@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Reports</title>
+  <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
+  
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* Override navbar link size and spacing to match index.html */
+    .navbar a {
+      font-size: 1.4rem;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--main-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Navigation -->
+  <header>
+  <div class="header" data-aos="fade-down">
+    <div class="header-container">
+      <a href="home.html" class="logo">
+        <img src="../images/CCIARCO.ico" alt="CCIARCO Logo" class="logo-img">
+      </a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="home.html" class="nav-link" data-aos="fade-right">Home</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="hub.html" class="nav-link" data-aos="fade-right">Hub</a>
+        <a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>
+        <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+    <!-- Dashboard Images Section Remains -->
+    <main style="padding-top: 80px;">
+    <section class="dashboard-images" data-aos="fade-up">
+      <h2>One Internal SLA</h2>
+      <div class="dashboard-images-container">
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/1. Overall Summary.png" alt="Overall Summary" />
+          <h3>Overall Summary</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/2. AMS-CS.png" alt="AMS-CS" />
+          <h3>AMS-CS</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/3. IMS-POSPREP.png" alt="IMS-POSPREP" />
+          <h3>IMS-POSPREP</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/4. FQI.png" alt="FQI" />
+          <h3>FQI</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/5. LOGISTICS.png" alt="LOGISTICS" />
+          <h3>LOGISTICS</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/6. COURIER.png" alt="COURIER" />
+          <h3>COURIER</h3>
+        </div>
+        <div class="dashboard-image-item">
+          <img src="../images/Dashboard PICTURE/7. FTS.png" alt="FTS" />
+          <h3>FTS</h3>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Picture Modal for Reports -->
+  <div id="reportModal" class="modal">
+    <span class="close" id="reportModalClose">&times;</span>
+    <img class="modal-content" id="reportModalImage">
+    <div class="modal-controls">
+      <button id="reportPrev">&#10094;</button>
+      <button id="reportZoomOut">-</button>
+      <button id="reportResetZoom"><i class='bx bx-search'></i></button>
+      <button id="reportZoomIn">+</button>
+      <button id="reportNext">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>&copy; 2024 CCIARCO | All Rights Reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        offset: 200,
+        easing: 'ease-in-out'
+      });
+    </script>
+    <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.navbar .nav-link');
+        // Set active class based on current URL
+        navLinks.forEach(link => {
+          if(link.href === window.location.href || link.href.endsWith(window.location.pathname)) {
+            link.classList.add('active');
+          }
+          // On click update active class (for links that do not trigger a full reload)
+          link.addEventListener('click', function() {
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      });
+    </script>
+    <script>
+      // Report Picture Modal Functionality
+      (function(){
+        const reportModal = document.getElementById("reportModal");
+        const reportModalImage = document.getElementById("reportModalImage");
+        const reportModalClose = document.getElementById("reportModalClose");
+        const reportZoomIn = document.getElementById("reportZoomIn");
+        const reportZoomOut = document.getElementById("reportZoomOut");
+        const reportResetZoom = document.getElementById("reportResetZoom");
+        const reportPrev = document.getElementById("reportPrev");
+        const reportNext = document.getElementById("reportNext");
+        const defaultZoom = 1;
+        let currentZoom = defaultZoom;
+        let offsetX = 0, offsetY = 0;
+        let isPanning = false, panStartX = 0, panStartY = 0;
+        let images = document.querySelectorAll(".dashboard-image-item img");
+        let currentIndex = 0;
+
+        images = Array.from(images);
+        images.forEach((img, index) => {
+          img.addEventListener("click", function(){
+            reportModal.style.display = "block";
+            reportModalImage.src = this.src;
+            currentIndex = index;
+            currentZoom = defaultZoom;
+            offsetX = 0; offsetY = 0;
+            reportModalImage.style.transform = `translate(0px, 0px) scale(${currentZoom})`;
+          });
+        });
+
+        function updateTransform() {
+          reportModalImage.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentZoom})`;
+        }
+
+        reportModalClose.onclick = function(){
+          reportModal.style.display = "none";
+          currentZoom = defaultZoom;
+          offsetX = 0; offsetY = 0;
+          updateTransform();
+        };
+
+        reportZoomIn.onclick = function(){
+          currentZoom += 0.1;
+          updateTransform();
+        };
+
+        reportZoomOut.onclick = function(){
+          currentZoom = Math.max(0.1, currentZoom - 0.1);
+          updateTransform();
+        };
+
+        reportResetZoom.onclick = function(){
+          currentZoom = defaultZoom;
+          offsetX = 0; offsetY = 0;
+          updateTransform();
+        };
+
+        reportPrev.onclick = function(){
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+          reportModalImage.src = images[currentIndex].src;
+          currentZoom = defaultZoom;
+          offsetX = 0; offsetY = 0;
+          updateTransform();
+        };
+
+        reportNext.onclick = function(){
+          currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+          reportModalImage.src = images[currentIndex].src;
+          currentZoom = defaultZoom;
+          offsetX = 0; offsetY = 0;
+          updateTransform();
+        };
+
+        // Panning functionality: start, move, end
+        reportModalImage.addEventListener("mousedown", function(e){
+          if(reportModal.style.display === "block"){
+            isPanning = true;
+            panStartX = e.clientX - offsetX;
+            panStartY = e.clientY - offsetY;
+            e.preventDefault();
+          }
+        });
+        window.addEventListener("mousemove", function(e){
+          if(isPanning){
+            offsetX = e.clientX - panStartX;
+            offsetY = e.clientY - panStartY;
+            updateTransform();
+          }
+        });
+        window.addEventListener("mouseup", function(){
+          isPanning = false;
+        });
+
+        window.addEventListener("keydown", function(e){
+          if(reportModal.style.display === "block") {
+            if(e.key === "Escape"){
+              reportModal.style.display = "none";
+              currentZoom = defaultZoom;
+              offsetX = 0; offsetY = 0;
+              updateTransform();
+            } else if(e.key === "ArrowLeft"){
+              reportPrev.onclick();
+            } else if(e.key === "ArrowRight"){
+              reportNext.onclick();
+            }
+          }
+        });
+
+        reportModal.addEventListener("click", function(e){
+          if(e.target === reportModal){
+              reportModal.style.display = "none";
+              currentZoom = defaultZoom;
+              offsetX = 0; offsetY = 0;
+              updateTransform();
+          }
+        });
+      })();
+    </script>
+  </footer>
+
+</body>
+</html>
+
+
