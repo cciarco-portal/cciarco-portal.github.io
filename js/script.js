@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           if (accessLevels[username] && accessLevels[username] === password) {
               console.log("Login successful. Redirecting...");
-              window.location.href = "home.html"; // Ensure the correct path
+              window.location.href = "html/home.html"; // Ensure the correct path
           } else {
               alert("Incorrect username or password. Please try again.");
           }
