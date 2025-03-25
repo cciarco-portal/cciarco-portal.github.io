@@ -46,58 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
-function checkLoginStatus() {
-    // Only run login popup logic if the elements exist
-    const loginPopup = document.getElementById('login-popup');
-    const mainContent = document.getElementById('main-content');
-    if (loginPopup && mainContent) {
-        if (!sessionStorage.getItem('loggedIn')) {
-            loginPopup.style.display = 'flex';
-        } else {
-            mainContent.style.display = 'block';
-        }
-    }
-}
 
-document.getElementById('close-popup') && document.getElementById('close-popup').addEventListener('click', function() {
-    document.getElementById('login-popup').style.display = 'none';
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const loginForm = document.getElementById("login-form");
-  if (loginForm) {
-      loginForm.addEventListener("submit", function(e) {
-          e.preventDefault();
-          const username = document.getElementById("username").value.trim();
-          const password = document.getElementById("password").value;
-
-          const accessLevels = {
-              admin_procurement: 'admin123',
-              accounting_finance: 'finance123',
-              service_fulfillment: 'service123',
-              sales_marketing: 'sales123',
-              human_capital: 'human123',
-              technical_services: 'tech123',
-              project_management: 'project123',
-              cciarco: 'cciarco123',
-              gad: 'gadmode'
-          };
-
-          if (accessLevels[username] && accessLevels[username] === password) {
-              console.log("Login successful. Redirecting...");
-              window.location.href = "index.html"; // Ensure the correct path
-          } else {
-              alert("Incorrect username or password. Please try again.");
-          }
-      });
-  }
-});
-
-
-// Only run checkLoginStatus if the expected elements exist (skip on login page)
-if (document.getElementById('login-popup') && document.getElementById('main-content')) {
-    window.onload = checkLoginStatus;
-}
 
 // Highlight navbar links based on scroll position
 document.addEventListener('DOMContentLoaded', function() {
