@@ -89,9 +89,6 @@
 
         .submit-btn { background-color: #00B0FF; color: white; }
         .submit-btn:hover { background-color: #0288D1; }
-
-        .google-btn { background-color: #db4437; color: white; }
-        .google-btn:hover { background-color: #c1351d; }
     </style>
 </head>
 <body>
@@ -107,49 +104,5 @@
         <h2>Login</h2>
         <form id="login-form">
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <button type="submit" class="btn submit-btn">SUBMIT</button>
-        </form>
-        <button id="google-login" class="btn google-btn">Login with Google</button>
-    </div>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
-            authDomain: "cciarco-portal.firebaseapp.com",
-            projectId: "cciarco-portal",
-            storageBucket: "cciarco-portal.firebasestorage.app",
-            messagingSenderId: "513140257536",
-            appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
-            measurementId: "G-0J0T2WDJJQ"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const googleProvider = new GoogleAuthProvider();
-
-        document.getElementById("google-login").addEventListener("click", function () {
-            signInWithPopup(auth, googleProvider)
-                .then((result) => {
-                    const user = result.user;
-                    if (!user.email.endsWith("@tangentsolutionsinc.com")) {
-                        alert("Only @tangentsolutionsinc.com emails are allowed.");
-                        auth.signOut();
-                        return;
-                    }
-                    window.location.href = "html/home.html";
-                })
-                .catch(error => alert("Google login failed: " + error.message));
-        });
-    </script>
-</body>
-</html>
+                <label for="username">Email</label>
+                <input type="email" id="username
