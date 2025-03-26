@@ -15,7 +15,9 @@
         }
 
         .waves {
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -58,16 +60,16 @@
             margin-bottom: 20px;
         }
 
-        h2 { color: #fff; margin-bottom: 30px; }
+        h2 { color: #fff; margin-bottom: 20px; }
 
-        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group { margin-bottom: 15px; text-align: left; }
 
         label { color: #4FC3F7; font-size: 14px; }
 
         input {
             width: 100%;
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 5px;
             border-radius: 5px;
             border: none;
             background-color: #22354C;
@@ -89,13 +91,20 @@
 
         .submit-btn { background-color: #00B0FF; color: white; }
         .submit-btn:hover { background-color: #0288D1; }
+
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="wave wave-bottom">
+    <div class="waves">
         <svg viewBox="0 0 1440 320">
-            <path fill="#1A2C43" d="M0,128L30,160C60,192,120,256,180,266.7C240,277,300,235,360,208C420,181,480,171,540,144C600,117,660,85,720,85C780,85,840,117,900,144C960,171,1020,192,1080,213.3C1140,235,1200,245,1260,213.3C1320,181,1380,107,1410,64L1440,21L1440,0L0,0Z"></path>
+            <path class="wave wave-bottom" fill="#1A2C43" d="M0,128L30,160C60,192,120,256,180,266.7C240,277,300,235,360,208C420,181,480,171,540,144C600,117,660,85,720,85C780,85,840,117,900,144C960,171,1020,192,1080,213.3C1140,235,1200,245,1260,213.3C1320,181,1380,107,1410,64L1440,21L1440,0L0,0Z"></path>
         </svg>
     </div>
 
@@ -112,6 +121,7 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" class="btn submit-btn">SUBMIT</button>
+            <p id="error-message"></p>
         </form>
     </div>
 
@@ -136,6 +146,7 @@
             event.preventDefault();
             const email = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
 
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
@@ -143,7 +154,8 @@
                     window.location.href = "html/home.html";
                 })
                 .catch((error) => {
-                    alert("Login failed: " + error.message);
+                    errorMessage.textContent = "Login failed: " + error.message;
+                    errorMessage.style.display = "block";
                 });
         });
     </script>
