@@ -1283,31 +1283,44 @@ h2 {
 }
 
 .footer-logo {
-    width: 90px;
+    width: 120px;
     margin-bottom: 1rem;
 }
 
-.footer-socials a {
-    font-size: 1.8rem;
-    margin-right: 1rem;
-    color: var(--main-color);
-    transition: color 0.3s ease;
-}
-
-.footer-socials a:hover {
-    color: var(--second-bg-color);
-}
 
 .footer-column h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--main-color);
 }
-
-.footer-column p,
+/* Make all footer logos the same size */
+.footer-logo[alt="PCI DSS Seal"] {
+    width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Remove any conflicting padding here if present */
+}
+.footer-logo[alt="CCIARCO Logo1"] {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    /* Remove any conflicting padding here if present */
+}
+.footer-column p{
+    font-size: 1.8rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+}
 .footer-column ul {
     font-size: 1rem;
     line-height: 1.6;
+    padding-left: 3.5rem;
 }
 
 .footer-column ul {
@@ -1339,6 +1352,15 @@ h2 {
     color: var(--main-color);
     transition: color 0.3s ease;
 }
+
+/* Add this to your CSS file */
+.footer-column .footer-logo[alt="DPA Seal"],
+.footer-column .footer-logo[alt="PCI DSS Seal"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .footer p a:hover {
     color: var(--second-bg-color);
@@ -1905,4 +1927,58 @@ main {
   transform: scale(1.05);
 }
 
+
+.privacy-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+}
+
+.privacy-modal-content {
+  background: var(--second-bg-color);
+  max-width: 400px;
+  margin: 8% auto;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.privacy-modal-logo {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.privacy-modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.privacy-modal-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-modal-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.privacy-modal-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 /* ...existing code... */
