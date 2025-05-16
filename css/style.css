@@ -853,7 +853,7 @@ body {
 .content-container {
     padding: 5rem 9% 2rem; /* Adjust padding as per your requirements */
     min-height: 100vh; /* Ensure it takes up at least the full viewport height */
-    background: var(--bg-color); /* Set the background color */
+    background: var(--second-bg-color); /* Set the background color */
 }
 
 /* Overview section styling */
