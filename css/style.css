@@ -555,7 +555,7 @@ span {
 
 /* Specific Section Styles */
 /* Used in: Index.html */
-section.department, section.corpcom, section.riskmanagement, section.rns, section.lnd, section.cnb,section.tanos {
+section.tanob,section.tanos {
     padding: 10rem 9% 2rem;
     min-height: 90vh;
     background: var(--second-bg-color);
