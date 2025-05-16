@@ -555,7 +555,7 @@ span {
 
 /* Specific Section Styles */
 /* Used in: Index.html */
-section.tanob,section.tanos {
+section.tanov,section.tanos {
     padding: 10rem 9% 2rem;
     min-height: 90vh;
     background: var(--second-bg-color);
