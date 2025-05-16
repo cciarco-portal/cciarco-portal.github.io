@@ -555,14 +555,14 @@ span {
 
 /* Specific Section Styles */
 /* Used in: Index.html */
-section.tanov,section.tanos {
+section.tanov {
     padding: 10rem 9% 2rem;
     min-height: 90vh;
     background: var(--second-bg-color);
 }
 
 /* Used in: compliance.html, abt.html */
-section.compliance, section.internalaudit, section.team,section.tanbg {
+section.tanos,section.team,section.tanbg {
     padding: 10rem 9% 2rem;
     min-height: 80vh;
     background: var(--bg-color);
