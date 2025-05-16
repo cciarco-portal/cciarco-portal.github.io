@@ -1265,7 +1265,7 @@ h2 {
 }
 
 .footer {
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     color: var(--text-color);
     padding: 2rem 9%;
 }
