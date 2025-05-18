@@ -518,9 +518,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const agreeBtnPdf = document.getElementById("agree-privacy-btn-pdf");
   const policyNotePdf = document.getElementById("policy-note-pdf");
 
-  if (!localStorage.getItem("privacyAgreed")) {
+  // Only show if not agreed AND not shown in this session
+  if (!localStorage.getItem("privacyAgreed") && !sessionStorage.getItem("privacyShown")) {
     privacyModal.style.display = "flex";
     document.body.style.overflow = "hidden";
+    sessionStorage.setItem("privacyShown", "yes");
   }
 
   // Show PDF and hide main notice
@@ -541,9 +543,6 @@ document.addEventListener("DOMContentLoaded", function() {
     mainContent.style.display = "block";
     policyNote.style.display = "none";
   };
-
-  // If user tries to click Agree before viewing policy
-  // (No longer needed since Agree is only in PDF view)
 
   // Agree after viewing PDF
   agreeBtnPdf.onclick = function() {
