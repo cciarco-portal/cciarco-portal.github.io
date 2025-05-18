@@ -151,7 +151,7 @@
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     console.log("Login successful!", userCredential.user);
-                    window.location.href = "html/home.html";
+                    window.location.href = "html/privacy.html";
                 })
                 .catch((error) => {
                     errorMessage.textContent = "Login failed: " + error.message;
