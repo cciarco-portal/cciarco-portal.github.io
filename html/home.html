@@ -518,11 +518,10 @@ document.addEventListener("DOMContentLoaded", function() {
   const agreeBtnPdf = document.getElementById("agree-privacy-btn-pdf");
   const policyNotePdf = document.getElementById("policy-note-pdf");
 
-  // Only show if not agreed AND not shown in this session
-  if (!localStorage.getItem("privacyAgreed") && !sessionStorage.getItem("privacyShown")) {
+  // Only show if not agreed
+  if (!localStorage.getItem("privacyAgreed")) {
     privacyModal.style.display = "flex";
     document.body.style.overflow = "hidden";
-    sessionStorage.setItem("privacyShown", "yes");
   }
 
   // Show PDF and hide main notice
