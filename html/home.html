@@ -483,31 +483,75 @@
 
 <!-- Privacy Policy Modal -->
 <div id="privacy-modal" class="privacy-modal">
-  <div class="privacy-modal-content">
+  <div class="privacy-modal-content scrollable-modal" id="privacy-main-content" style="max-width:900px; width:95vw;">
     <img src="../images/DPASeal.png" alt="DPA Seal" class="privacy-modal-logo">
     <h2>Privacy Notice</h2>
     <p>
       By accessing and using CCIARCO Portal, you acknowledge that you have read and understood this privacy notice and consent to the collection, use, and disclosure of your personal information.<br><br>
       Please note that this privacy notice may be subject to change, and any updates will be communicated to you through appropriate channels.
     </p>
-<a href="https://drive.google.com/file/d/15191VRtct3PYqSJyWoUMV0HhPkSAtv_9/view" target="_blank" class="privacy-modal-link">
-  Data Privacy Policies and Procedure - Read more
-  <i class="fas fa-external-link-alt" style="margin-left:6px; font-size:1em; vertical-align:middle;"></i>
-</a><br>
-    <button id="agree-privacy-btn" class="privacy-modal-btn">Agree</button>
+    <button id="view-policy-btn" class="privacy-modal-btn" style="margin-top:1rem;">View Policy</button>
+    <div id="policy-note" style="color:#b00; margin-top:0.5rem; display:none;">Please read the policy first</div>
+  </div>
+  <div class="privacy-modal-content scrollable-modal" id="policy-pdf-content" style="max-width:900px; width:95vw; display:none;">
+    <h3 style="margin-bottom:1rem;">Data Privacy Policies and Procedure</h3>
+    <button id="back-policy-btn" class="privacy-modal-btn" style="margin-bottom:1rem;">Back</button>
+    <div id="pdf-scroll-container" style="width:100%; height:60vh; overflow:auto; margin-bottom:1.5rem; border:1px solid #ccc; border-radius:8px;">
+      <iframe 
+        id="policy-pdf"
+        src="../images/DATA PRIVACY [EOD-CCIARCO-PLM-037-V2.0] 2024 14Jan2025.pdf"
+        width="100%" height="100%" style="border:none; min-height:800px;"></iframe>
+    </div>
+    <button id="agree-privacy-btn-pdf" class="privacy-modal-btn" style="margin-top:1rem;" disabled>Agree</button>
+    <div id="policy-note-pdf" style="color:#fff; margin-top:0.5rem; display:none;">Please wait a moment before agreeing.</div>
   </div>
 </div>
+
 <script>
-// Show privacy modal if not agreed
 document.addEventListener("DOMContentLoaded", function() {
+  const privacyModal = document.getElementById("privacy-modal");
+  const viewPolicyBtn = document.getElementById("view-policy-btn");
+  const policyNote = document.getElementById("policy-note");
+  const mainContent = document.getElementById("privacy-main-content");
+  const pdfContent = document.getElementById("policy-pdf-content");
+  const backPolicyBtn = document.getElementById("back-policy-btn");
+  const agreeBtnPdf = document.getElementById("agree-privacy-btn-pdf");
+  const policyNotePdf = document.getElementById("policy-note-pdf");
+
   if (!localStorage.getItem("privacyAgreed")) {
-    document.getElementById("privacy-modal").style.display = "block";
+    privacyModal.style.display = "flex";
     document.body.style.overflow = "hidden";
   }
-  document.getElementById("agree-privacy-btn").onclick = function() {
-    localStorage.setItem("privacyAgreed", "yes");
-    document.getElementById("privacy-modal").style.display = "none";
-    document.body.style.overflow = "";
+
+  // Show PDF and hide main notice
+  viewPolicyBtn.onclick = function() {
+    mainContent.style.display = "none";
+    pdfContent.style.display = "block";
+    policyNotePdf.style.display = "block";
+    agreeBtnPdf.disabled = true;
+    setTimeout(function() {
+      agreeBtnPdf.disabled = false;
+      policyNotePdf.style.display = "none";
+    }, 3000); // 3 seconds
+  };
+
+  // Back to main notice
+  backPolicyBtn.onclick = function() {
+    pdfContent.style.display = "none";
+    mainContent.style.display = "block";
+    policyNote.style.display = "none";
+  };
+
+  // If user tries to click Agree before viewing policy
+  // (No longer needed since Agree is only in PDF view)
+
+  // Agree after viewing PDF
+  agreeBtnPdf.onclick = function() {
+    if (!agreeBtnPdf.disabled) {
+      localStorage.setItem("privacyAgreed", "yes");
+      privacyModal.style.display = "none";
+      document.body.style.overflow = "";
+    }
   };
 });
 </script>
