@@ -2021,4 +2021,22 @@ main {
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   opacity: 0.85;
 }
+
+.footer-column {
+  font-size: 1em; /* Standard text size for all columns */
+}
+.footer-column p,
+.footer-column ul,
+.footer-column li,
+.footer-column span {
+  font-size: inherit;
+  color: inherit;
+}
+.footer-column a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-column a:hover {
+  text-decoration: underline;
+}
 /* ...existing code... */
