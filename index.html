@@ -124,7 +124,7 @@
             <p id="error-message"></p>
         </form>
     </div>
-
+  <!-- Header Design --> 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
@@ -151,7 +151,7 @@
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     console.log("Login successful!", userCredential.user);
-                    window.location.href = "html/privacy.html";
+                    window.location.href = "html/home.html";
                 })
                 .catch((error) => {
                     errorMessage.textContent = "Login failed: " + error.message;
@@ -159,6 +159,6 @@
                 });
         });
     </script>
-
+  <!-- Header Design --> 
 </body>
 </html>
