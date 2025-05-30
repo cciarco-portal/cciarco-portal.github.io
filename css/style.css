@@ -555,14 +555,14 @@ span {
 
 /* Specific Section Styles */
 /* Used in: Index.html */
-section.tanov {
+section.tanov,section.tanos {
     padding: 10rem 9% 2rem;
     min-height: 90vh;
     background: var(--second-bg-color);
 }
 
 /* Used in: compliance.html, abt.html */
-section.tanos,section.team,section.tanbg {
+section.team,section.tanbg {
     padding: 10rem 9% 2rem;
     min-height: 80vh;
     background: var(--bg-color);
@@ -1061,6 +1061,19 @@ h2 {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+
+}
+
+.categories-container .category,
+.category-container .category {
+    box-shadow: 0 4px 12px var(--main-color);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.categories-container .category:hover,
+.category-container .category:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    transform: translateY(-2px) scale(1.04);
 }
 
 .category-card {
@@ -1265,7 +1278,7 @@ h2 {
 }
 
 .footer {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
     padding: 2rem 9%;
 }
@@ -2022,6 +2035,26 @@ main {
   opacity: 0.85;
 }
 
+@media (max-width: 600px) {
+  .privacy-modal-content {
+    padding: 1rem 0.5rem;
+    font-size: 0.95em;
+  }
+  .privacy-modal-logo {
+    max-width: 80px;
+  }
+}
+
+/* Make the organizational structure image look clickable and add hover effect */
+#zoomTrigger {
+  cursor: pointer;
+  transition: box-shadow 0.2s, opacity 0.2s;
+}
+#zoomTrigger:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  opacity: 0.85;
+}
+
 .footer-column {
   font-size: 1em; /* Standard text size for all columns */
 }
@@ -2039,4 +2072,31 @@ main {
 .footer-column a:hover {
   text-decoration: underline;
 }
-/* ...existing code... */
+
+.show-all-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  max-width: 180px;
+  width: 150px;         /* Fixed width for consistency */
+  height: 38px;
+  padding: 0 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  background: var(--btn-bg, #ffd700);
+  color: var(--btn-text, #222d3b);
+  box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,0.08));
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 12px;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.show-all-btn i {
+  font-size: 1.2em;
+  margin-right: 6px;
+}
