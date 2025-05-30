@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CCIARCO Portal - Your central hub for documentation, policies, and procedures.">
+  <title>Hub</title>
+  <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<header>
+  <div class="header" data-aos="fade-down">
+    <div class="header-container">
+      <a href="home.html" class="logo">
+        <img src="../images/CCIARCO.ico" alt="CCIARCO Logo" class="logo-img">
+      </a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="home.html" class="nav-link" data-aos="fade-right">Home</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="corp.html" class="nav-link" data-aos="fade-right">Corp Governance</a>
+        <a href="docs.html" class="nav-link" data-aos="fade-right">Controlled Docs</a>
+        <a href="terminal.html" class="nav-link" data-aos="fade-right">Terminal Guidelines</a>
+        <!--<a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>>-->
+        <!--  <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>-->
+      </nav>
+      <!-- Light/Dark Mode Toggle Switch -->
+    <!--<div style="position:absolute;top:24px;right:32px;z-index:1000;">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+        <span style="font-size:1.1em;">🌙</span>
+        <input type="checkbox" id="mode-toggle" style="width:40px;height:20px;accent-color:#ffd700;">
+        <span style="font-size:1.1em;">☀️</span>
+      </label>
+    </div> -->
+    </div>
+  </div>
+</header>
+<div class="content-container">
+  <section class="document-categories" id="categories">
+    <h2>Controlled Documents</h2>
+    <div class="search-box-container">
+      <input type="text" class="search-box" placeholder="Search for documents..." id="search-box" oninput="searchDocuments()" aria-label="Search for documents">
+      <button class="search-btn" onclick="searchDocuments()">Search</button>
+    </div>
+     <div class="categories-container">
+      <button class="category" onclick="showDocuments('forms', this)" data-category="forms">Forms</button>
+      </div>
+ 
+    <div class="document-grid" id="forms">
+      <!-- Replace the static button with a toggle button -->
+      <div class="show-all-btn" onclick="toggleAllForms()">
+        <i class='bx bx-show'></i> Show All
+      </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">CCIARCO</h3>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 1"><a href="https://drive.google.com/drive/folders/1RjnSm8FsTMGHtuQL3aVp0TZe8xz7gv4B" target="_blank">Change Request Form (CRF) - AppDev </a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 1"><a href="https://drive.google.com/file/d/1T5u1erPn1rLAPZw1g5xeZICAX53hAhp4/view?usp=sharing" target="_blank">Change Request Form (CRF)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 2"><a href="https://drive.google.com/file/d/175ylR1uWASi54YKHXmEYGmZ9ze-084OB/view?usp=sharing" target="_blank">Change Management Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 3"><a href="https://drive.google.com/file/d/1FmiyqiqAcQch4AupEPGE3B8D7c8ov7XK/view?usp=sharing" target="_blank">CAPA Request Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 4"><a href="https://drive.google.com/file/d/1h6uGu8yAPAE_E34sP9nuf1qdGIZP7_4-/view?usp=sharing" target="_blank">CAPA Report</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 5"><a href="https://drive.google.com/file/d/1my4cBeZYbUGl373W2V59oRXLLa462hv2/view?usp=sharing" target="_blank">CAPA Audit and Verification</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 6"><a href="https://drive.google.com/file/d/1JkYgbufTE2WBZoJsZsC9OnEun2hUa25C/view?usp=sharing" target="_blank">Document Feedback Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 7"><a href="https://drive.google.com/file/d/16l8eN2MOKP41skbROY-_GbGe9cNr2InZ/view?usp=sharing" target="_blank">Third Party Due Diligence Questionnaire</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 8"><a href="https://drive.google.com/file/d/1Mz7g15l5pBzv4SMT9gxi0ZfCbCed5_7U/view?usp=sharing" target="_blank">Safety Self-Assessment</a></div>
+          <!--<div class="document-item" data-tooltip="COMPANY FORMS Document 9"><a href="https://drive.google.com/file/d/17JRvThEVeLOI6Otag4fZQjvhVPAr745U/view?usp=sharing" target="_blank">Internal Control Audit Checklist</a></div> -->
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 10"><a href="https://drive.google.com/file/d/1xVFdo4sTQAVQmwXLy734BNyzj_XSEdRO/view?usp=sharing" target="_blank">CCTV Footage Access Request Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 11"><a href="https://drive.google.com/file/d/18khi7zHPpAxPnbgDYUUz1ds3wNsvUzVh/view?usp=sharing" target="_blank">Hazard and Incident Report</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 11"><a href="https://drive.google.com/drive/folders/1CrvvzA3IH8Ih27fcAmeEjTuZZAbG5n3A" target="_blank">Incident Report Handling Form (Internal)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 12"><a href="https://drive.google.com/file/d/15v7F_WLg32PqaZiRu0UEkr_TNJoOkFzC/view?usp=sharing" target="_blank">Hazard Reporting and Incident Investigation  Worksheet</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 13"><a href="https://drive.google.com/file/d/1ls51gmdZ7pofn3rZLqH57ejYDbQEGh2H/view?usp=sharing" target="_blank">SHARE Report</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 14"><a href="https://drive.google.com/file/d/15UNqOapu_AMQnF9hb3s7lHSqm5i6oGsL/view?usp=sharing" target="_blank">Quarterly Workplace Safety Inspection Checklist</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 15"><a href="https://drive.google.com/file/d/1hafJScfdvZ7zzNf53_u9XaCTlxT2U93y/view?usp=sharing" target="_blank">Minutes of the Meeting</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 104"><a href="https://drive.google.com/file/d/1CZldXEiPGsgn7_Rrr6w8K1t6iJvrBGh-/view?usp=sharing" target="_blank">CAPA REGISTER</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 104"><a href="https://drive.google.com/drive/folders/1iMNMHfrFvR1IEiWARv03f_C26lectvcN" target="_blank">Training attendance Form"</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 16"><a href="https://drive.google.com/file/d/1wa6yTc2qWzZrEpIP_D3vpmPoz2kAfjBT/view?usp=sharing" target="_blank">Meeting Attendance Sheet</a></div>
+         <!-- <div class="document-item" data-tooltip="COMPANY FORMS Document 17"><a href="https://drive.google.com/file/d/1Fx2GHJu3bq3ESEcdcSR6uy6wnhrRdw-/view?usp=sharing" target="_blank">Internal Audit Checklist</a></div> -->
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 18"><a href="https://drive.google.com/file/d/1URCuT3t5dexaocJjZ23ZWDdAzEfs_FbX/view?usp=sharing" target="_blank">System User Access Request Form (SUARF) - Internal</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 19"><a href="https://drive.google.com/file/d/1FbfKqvzHHk5KmpgP1kAt_tLVWfDou5Lg/view?usp=sharing" target="_blank">FQI Project Specifications Standardization Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 82"><a href="https://drive.google.com/file/d/1rhXgo0DX72lUzIbbR53U6dloqfcawa5X/view?usp=sharing" target="_blank">Data SIM Card Assignment Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 83"><a href="https://drive.google.com/drive/folders/11wL9H3nGPDbq5NWnXHkrZeECcIgJNKyc?usp=sharing" target="_blank">Test Card Assignment Form</a></div>
+        </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">FAD</h3>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 20"><a href="https://drive.google.com/file/d/1r8hs9JcdrGqanM6tuwQs9FS2WsNuSt5E/view?usp=sharing" target="_blank">Transportation Expense Reimbursement Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 21"><a href="https://drive.google.com/file/d/1JF8TZa2SnoYJ8hda0BzMl9SFtc8GK9kn/view?usp=sharing" target="_blank">Mileage Claim Reimbursement Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 22"><a href="https://drive.google.com/file/d/1fuYkWy3u61SYwB6qG9UoVizuUPiIns4V/view?usp=sharing" target="_blank">Cash Advance Form (CA)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 23"><a href="https://drive.google.com/file/d/1ZrFcIF9JMQI6spUGMRthuNuxcuniUaCG/view?usp=sharing" target="_blank">Reimbursement / Liquidation Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 24"><a href="https://drive.google.com/file/d/1bgAFfe_uHXuzYyb6NZ-lZ95hAii-wMcV/view?usp=sharing" target="_blank">Billing Statement (New Installation)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 25"><a href="https://drive.google.com/file/d/1gtM6nzIUl2Lm9lu0uSwe8dlYFyytg4Lo/view?usp=sharing" target="_blank">Billing Statement (Non-VAT)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 26"><a href="https://drive.google.com/file/d/1h3_eeOs6zk4XlY6cMOspygg7rb4Y47cf/view?usp=sharing" target="_blank">Billing Statement (Manual)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 27"><a href="https://drive.google.com/file/d/1iSqV5FnpcCoxV2GxRbxdmwGTgHsb-Hxu/view?usp=sharing" target="_blank">Billing Statement (Servicing)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 28"><a href="https://drive.google.com/file/d/1C-bdCb2Y_xLmrpPbruhnxdlZYwojFK34/view?usp=sharing" target="_blank">Billing Statement (Renewal)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 29"><a href="https://drive.google.com/file/d/11_QjodQdW_9u3CYJhEhaL_uJc5IR6J3x/view?usp=sharing" target="_blank">Statement of Account</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 30"><a href="https://drive.google.com/file/d/1PkpxfjyzQIestKbTLR29fx02T_eoWGbl/view?usp=sharing" target="_blank">Accounts Payable Voucher</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 31"><a href="https://drive.google.com/file/d/1yydRLm1eWN5qPYvBb4LDvfOa0nujxwri/view?usp=sharing" target="_blank">Check Voucher</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 32"><a href="https://drive.google.com/file/d/1rkgD9Qj_xv8PlFzPoNzCC_lQXpdSNRKu/view?usp=sharing" target="_blank">Petty Cash Voucher</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 33"><a href="https://drive.google.com/file/d/1Fk9CzEjI9blZsFG-QGMQho0QsJe2P7qO/view?usp=sharing" target="_blank">Jourmal Voucher</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 34"><a href="https://drive.google.com/file/d/13Ehcar75JdfOOxcW75Ywr1kKSoPP3CJM/view?usp=sharing" target="_blank">Request for Payment [RFP]</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 35"><a href="https://drive.google.com/file/d/1syDpxBm1Vsg4l9dBYmtImxh6vmExPTh_/view?usp=sharing" target="_blank">Clearance Deduction/Payable Details</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 36"><a href="https://drive.google.com/file/d/1uNlNoAJZuCtdg89xEDl3_NKoPrFWBe18/view?usp=sharing" target="_blank">Credit Memo</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 37"><a href="https://drive.google.com/file/d/1OtqcUzDkZJ1YU4o_ufCHgzxFDa2WcZk5/view?usp=sharing" target="_blank">Sales Invoice (Manual)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 38"><a href="https://drive.google.com/file/d/1rugeNlhgZRRl_P2Kohp_thp9eutQVufl/view?usp=sharing" target="_blank">Sales Invoice</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 39"><a href="https://drive.google.com/file/d/1I99baP-7BjysYvFZ7HFG56NAuIA-Oand/view?usp=sharing" target="_blank">Invoice</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 40"><a href="https://drive.google.com/file/d/13thxyboK504GlYcuqo07w0DzmuhtZZvb/view?usp=sharing" target="_blank">Statement of Account (Manual)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 41"><a href="https://drive.google.com/file/d/1UfivTT0RlDnUItsFK8T9TnBdxE4Lhy-o/view?usp=sharing" target="_blank">Receiving and Inspection Report</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 42"><a href="https://drive.google.com/file/d/1er9I4pqIxaAT3G6kWuNdGmok76OmqW21/view?usp=sharing" target="_blank">Petty Cash Custodian Replenishment Request Summary </a></div>
+      </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">GAPD</h3>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 43"><a href="https://drive.google.com/file/d/1xGBvt1TEx78z2WiaXl6_CPbWNoDgelow/view?usp=sharing" target="_blank">Supplier Evaluation Sheet (Annual)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 44"><a href="https://drive.google.com/file/d/1On7R9prR2sdBLrlW_E4Ch4LB0c-dx9z4/view?usp=sharing" target="_blank">Work Completion and Acceptance Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 45"><a href="https://drive.google.com/file/d/1cseBXKhcfYxpz3tIV-Gn1U1vAltO-Z4I/view?usp=sharing" target="_blank">Business Travel Order Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 46"><a href="https://drive.google.com/file/d/19_dG4dj6_cvqXb6TMf3rh6cDj3wZJxcb/view?usp=sharing" target="_blank">Confirmation Letter</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 47"><a href="https://drive.google.com/file/d/1HGOio-h-rNAOYXBMoQFfIGA7BiP_7SoQ/view?usp=sharing" target="_blank">Supplier Evaluation Sheet (Selection Phase)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 48"><a href="https://drive.google.com/file/d/1PSFXIkXHBcAvPmaibzDhOjQiqWuCO8i_/view?usp=sharing" target="_blank">Certificate of Asset Disposal</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 49"><a href="https://drive.google.com/file/d/1Dhn-VywLyzVDISpevMa_4w0waXx2rGcn/view?usp=sharing" target="_blank">Re-Routing Authorization Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 50"><a href="https://drive.google.com/file/d/1Q5PtZVsiA5bEehR9GY4YMENYMh1M3wH0/view?usp=sharing" target="_blank">Shipment Booking Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 51"><a href="https://drive.google.com/file/d/14hwBsxeIlEjIaYSS0MLG28I6Nq0Par4V/view?usp=sharing" target="_blank">Supplier Profile Sheet</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 52"><a href="https://drive.google.com/file/d/1oR0oKAC5h-msWQFBaqax9pT5O4E8z9gJ/view?usp=sharing" target="_blank">Lifting of Abandonment Authorization Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 53"><a href="https://drive.google.com/file/d/10NSz1AkmeSKqGejA4S3HeC2LyEUg0Q7/view?usp=sharing" target="_blank">Supplier Accreditation Requirements</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 54"><a href="https://drive.google.com/file/d/1fJkhBnnZqFdaIi8H-3J1xl2W1He0loGq/view?usp=sharing" target="_blank">Asset Disposal Request Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 55"><a href="https://drive.google.com/file/d/1TtyjHEczvmV1rrIrl9NGXCwHD7CRzpxS/view?usp=sharing" target="_blank">Minutes of the Meeting</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 56"><a href="https://drive.google.com/file/d/1BPUFhh5Vx33uHnSAJMHLsKOcYvgZ8LLI/view?usp=sharing" target="_blank">Contractor Biometric Access Enrollment Form (CBAEF)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 57"><a href="https://drive.google.com/file/d/1WL7zqeLrwtXneMOq69NdxWtKyMCgk09z/view?usp=sharing" target="_blank">Application for Leave of Absence</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 58"><a href="https://drive.google.com/file/d/1q90BsYbDOvLZ2fyhpapbR1YDZppacpfm/view?usp=sharing" target="_blank">Application for Bereavement Assistance</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 58"><a href="https://drive.google.com/file/d/1q90BsYbDOvLZ2fyhpapbR1YDZppacpfm/view?usp=sharing" target="_blank">Application for Bereavement Assistance</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 98"><a href="https://drive.google.com/file/d/1mti03Ln0ruydw4s-29MzFOCovVuo__Cf/view?usp=sharing" target="_blank">Asset Turn-Over Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 99"><a href="https://drive.google.com/file/d/17FzqerrHO1sr7sKBY8Hc-vKONGplP5zH/view?usp=sharing" target="_blank">Purchase Requisition (PR)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 100"><a href="https://drive.google.com/drive/folders/1aNzc0AOq7MsvdDlgICVYUCRVXLDnnJFM?usp=sharing" target="_blank">Request for Payment</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 101"><a href="https://drive.google.com/file/d/1Yvb76eJy2-4Rae9JBRfr-MVPsTqyB2zR/view?usp=sharing" target="_blank">Authorization of Capital Expenditures (ACE)</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 102"><a href="https://drive.google.com/file/d/1ovNPiiw7xdn8-MQ-NhvykbYFRakYN3Rb/view?usp=sharing" target="_blank">Employee Asset Assignment Form</a></div> 
+      </div>
+      <div class="department-section">
+          <h3 onclick="departmentAction(this)">HCMD</h3>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 59"><a href="https://drive.google.com/file/d/1TLUpDSwsr6v09w7-PTnOwQtSld86VDAE/view?usp=sharing" target="_blank">POS Terminal Application Password[s] Acknowledgement and Agreement Form (SFD)</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 60"><a href="https://drive.google.com/file/d/1Uc_KDge7WTTfE946Ts0uE1ePrb6aqVFt/view?usp=sharing" target="_blank">POS Terminal Application Password[s] Acknowledgement and Agreement Form (CS)</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 61"><a href="https://drive.google.com/file/d/1A5VPSNJU8SnOGKhHttgctqzS24p7Dc3U/view?usp=sharing" target="_blank">Interview Sheet</a></div>
+         <!--  <div class="document-item" data-tooltip="COMPANY FORMS Document 62"><a href="https://drive.google.com/file/d/1XUY6M6IpG6BsNvaUmzvg5ibxo9yXeArG/view?usp=sharing" target="_blank">Key Custodian Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 63"><a href="https://drive.google.com/file/d/1_RaUFYpBdgpGWo9pMxMSEi3qriSOGkpz/view?usp=sharing" target="_blank">Logistics' Delivery Receipt Form</a></div> -->
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 74"><a href="https://drive.google.com/file/d/1mr8g5zO6FxkDUgSx17lUsSzwI6nCqavp/view?usp=sharing" target="_blank">Information Security & Incident Management and Agreement</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 75"><a href="https://drive.google.com/file/d/11Z1vxDvoyHTYuWeRBv-5jfuFUtBmMjpt/view?usp=sharing" target="_blank">Sales and Marketing New Hire Training - Bootcamp Assessment</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 76"><a href="https://drive.google.com/file/d/12CqOU9e2trVeDh7o1itI6xkLCbMs64L4/view?usp=sharing" target="_blank">Sales and Marketing New Hire Training - Service Type Assessment</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 77"><a href="https://drive.google.com/file/d/1-Ob2-0StTuWRbg3Q_ioR7Dnj4suKbiQW/view?usp=sharing" target="_blank">Customer Service New Hire Training - Helpdesk Support Basics Assessment</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 78"><a href="https://drive.google.com/file/d/1TtysJCcAG3ocSqbjISfUAdOoXpsFJLxl/view?usp=sharing" target="_blank">Departmental New Hire Onboarding Training Program Sign-Off</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 79"><a href="https://drive.google.com/file/d/1O8-aW0kuD5toWlXujgkn_u2AnJx2KguX/view?usp=sharing" target="_blank">Career Development Plan [CDP]</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 80"><a href="https://drive.google.com/file/d/1FFmDshJV12nFeCBUzrD29XKbqWcBVr-r/view?usp=sharing" target="_blank">Career and Leadership Advancement Program [CLAP] Agreement</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 81"><a href="https://drive.google.com/file/d/1WLXfium2q1gsLjeEBemCrd6Okzhk-AYt/view?usp=sharing" target="_blank">Training Acknowledgement Form</a></div>
+      </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">FTS</h3>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 64"><a href="https://drive.google.com/file/d/1W3PWPJiQqnuRWe6Exv_z53oII8LAHHnL/view?usp=sharing" target="_blank">SFD Services Requirements Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 65"><a href="https://drive.google.com/file/d/1m2j_Xyxo1yH7tsKMXMPx08bp4Rx4ok2P/view?usp=sharing" target="_blank">FTS Endorsement Form</a></div>  
+      </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">PTSS</h3>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 67"><a href="https://drive.google.com/file/d/1jG36FfPM0CUFB1uYywTPO8MUA7zzrYLi/view?usp=sharing" target="_blank">Delivery Receipt Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 68"><a href="https://drive.google.com/file/d/1wCGLECWnpFvypKt96GerpHQ0l0mb3Qp3/view?usp=sharing" target="_blank">Trip Ticket Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 69"><a href="https://drive.google.com/file/d/1MnBpLxEWdSuXXO7Ej06i0UZXSiAxqi2v/view?usp=sharing" target="_blank">Request for Thermal Paper</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 66"><a href="https://drive.google.com/file/d/1zsQ6SHVz6Wk2OR9gpzesNl6aho_YAxWu/view?usp=sharing" target="_blank">Maya Proactive Service Checklist</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 69"><a href="https://drive.google.com/file/d/1BGbrxk4DY-Cp14osd0eAtGrP7K3W3ZuU/view?usp=sharing" target="_blank">Key Custodian Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 69"><a href="https://drive.google.com/file/d/1_RaUFYpBdgpGWo9pMxMSEi3qriSOGkpz/view" target="_blank">Logistics' Delivery Receipt Form</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 87"><a href="https://drive.google.com/file/d/1_31-4ljFIKcdrSLuVQoMnll4UJoUL1dv/view" target="_blank">Outbound Logistics Checklist</a></div>
+          <div class="document-item" data-tooltip="COMPANY FORMS Document 88"><a href="https://drive.google.com/drive/folders/1dobX7GBOkElvc0iDYC3KJmIf6CCG68wI" target="_blank">Knowledge Management (KM) Form - POSPm</a></div>
+        </div>
+      <div class="department-section">
+          <h3 onclick="departmentAction(this)">PTSD</h3>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 94"><a href="https://drive.google.com/file/d/1QCyvPZaNnaj-sjTr-ZVEi7TUUEoM2m1D/view?usp=sharing" target="_blank">PTSD Footer</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 70"><a href="https://drive.google.com/file/d/1G4y9dYhm7rejlbrL4mg0j-YlkZ9sfyQ4/view" target="_blank">Visitors Access Register</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 70"><a href="https://drive.google.com/file/d/1k1RZ_ppKGjN0z271gQocli3_WHSWi1NC/view?usp=sharing" target="_blank">Tangent File Transfer Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 71"><a href="https://drive.google.com/file/d/1KUNm_FBu-OGkkIrOtzdc1erEhMWg-Rks/view?usp=sharing" target="_blank">Tangent SFTP Configuration Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 72"><a href="https://drive.google.com/file/d/1l9m1M6Gl62tJv2ze1wvaWiRhj-25pexm/view?usp=sharing" target="_blank">User's Access Right Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 93"><a href="https://drive.google.com/file/d/1rSwucMMHw3uIGU1fb5S9TO1Nl7pIt0Jy/view?usp=sharing" target="_blank">Office Computer Equipment Check-Up and Diagnosis Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 95"><a href="https://drive.google.com/file/d/1GuGpNrGLQWw0UIJPjLImhF_2Rmuiucvn/view?usp=sharing" target="_blank">In and Out Visitors Log Sheet</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 97"><a href="https://drive.google.com/file/d/1lMKDbzELtYD0t84GX3FuwKfHGe6bBst6/view?usp=sharing" target="_blank">Acceptance Checklist Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 97"><a href="https://drive.google.com/file/d/1rlaGFO39TyvWwTYnI1OdIphoJePaYCQY/view" target="_blank">Equipment Enrollment Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 97"><a href="https://drive.google.com/file/d/1L1vLLS6CqWlhJwxr8JR-r2tYPHiN-tzO/view" target="_blank">POS Application Update Form</a></div>
+      </div>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">SMD</h3>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 84"><a href="https://drive.google.com/file/d/1gdzdj8LGe6GTRlWDfO2vuzJ_P_3Xzq99/view?usp=sharing" target="_blank">Test Card Request Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 85"><a href="https://drive.google.com/file/d/1Ose3MdGXMacoA7uAEAHNUPN4hmIQm1tf/view?usp=sharing" target="_blank">Test Card Agreement Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 86"><a href="https://drive.google.com/file/d/1GvuybtjvYubleZ3nPczRWfAaK7QPE54d/view?usp=sharing" target="_blank">Service Request Quotation Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 88"><a href="https://drive.google.com/file/d/1MtRQYvhKgurvk-uH6oHgzhrV_IuXbuJT/view?usp=sharing" target="_blank">Sales Order Form</a></div>
+            <div class="document-item" data-tooltip="COMPANY FORMS Document 103"><a href="https://drive.google.com/file/d/1-um4AKw8I4-M4OpJWLBPb96o5_69fC90/view?usp=sharing" target="_blank">Terminal Installation Completion Form (TICF)</a></div>
+        </div>
+      </div>
+      <p id="disclaimer-box" style="max-width:700px;margin:32px auto 0 auto;padding:16px 24px 56px 24px;background:#fffbe7;border-left:6px solid #ffc107;color:#333;font-size:1.08em;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:6px; position:relative; text-align:left;">
+        <strong style="font-size:1.5em;display:block;text-align:center;margin-bottom:8px;">Disclaimer</strong>
+        <strong>Document Use Notice:</strong> 
+        All documents in this portal are confidential. They must not be copied, reproduced, or shared without prior approval from CCIARCO—except for designated forms, which may be downloaded for your use. Unauthorized distribution may result in disciplinary or legal action.
+        <br>
+        <strong>Access Control:</strong><br>
+        Accessibility is role-based and on a need-to-know basis. You may request access for specific documents if necessary. To do this, you may email 
+        <a href="mailto:cciarco-core@tangentsolutionsinc.com" style="color:#d35400;font-weight:bold;text-decoration:underline;">cciarco-core@tangentsolutionsinc.com</a>
+        with the requestor’s name, position, email, and reason.
+        <button onclick="document.getElementById('disclaimer-box').style.display='none';"
+          style="position:absolute;bottom:18px;right:24px;padding:6px 24px;border:none;border-radius:5px;background:#ffc107;color:#333;font-weight:bold;cursor:pointer;">
+          OK
+        </button>
+      </p>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>&copy; 2025 Tangent Solutions Inc. | All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 200,
+    easing: 'ease-in-out',
+  });
+</script>
+<script src="js/script.js"></script>
+<script>
+  function showDocuments(categoryId, element) {
+    const allGrids = document.querySelectorAll('.document-grid');
+    allGrids.forEach(grid => grid.style.display = 'none');
+
+    const categoryGrid = document.getElementById(categoryId);
+    if (!categoryGrid) {
+      console.error(`Category ID "${categoryId}" not found.`);
+      return;
+    }
+    categoryGrid.style.display = 'grid';
+
+    const allCategories = document.querySelectorAll('.category');
+    allCategories.forEach(category => category.classList.remove('active'));
+
+    element.classList.add('active');
+  }
+
+  function searchDocuments() {
+    const keyword = document.getElementById('search-box').value.toLowerCase();
+    const allDocuments = document.querySelectorAll('.document-item');
+    let matchedCategory = null;
+
+    allDocuments.forEach(doc => {
+      const text = doc.textContent.toLowerCase();
+      if (text.includes(keyword)) {
+        doc.style.display = 'block';
+        matchedCategory = doc.closest('.document-grid').id;
+      } else {
+        doc.style.display = 'none';
+      }
+    });
+
+    if (matchedCategory) {
+      const matchedCategoryElement = document.querySelector(`.category[data-category="${matchedCategory}"]`);
+      showDocuments(matchedCategory, matchedCategoryElement);
+    }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const items = document.querySelectorAll('.document-item');
+    items.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Ensure clicking the item triggers the link
+        const link = this.querySelector('a');
+        if(link) {
+          window.open(link.href, link.target || '_self');
+        }
+      });
+    });
+  });
+
+  // Updated function: using computed style for a one-click toggle
+  function departmentAction(header) {
+    console.log("Department " + header.textContent.trim() + " clicked");
+    const container = header.parentElement;
+    const items = container.querySelectorAll('.document-item');
+    items.forEach(item => {
+      const computedDisplay = window.getComputedStyle(item).display;
+      item.style.display = (computedDisplay === 'none') ? 'block' : 'none';
+    });
+  }
+
+  function toggleAllForms() {
+      const formsGrid = document.getElementById('forms');
+      const items = formsGrid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          // Hide all items
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          // Show all items
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+
+  // New function for processFlow, similar to toggleAllForms
+  function toggleAllProcessFlow() {
+    const grid = document.getElementById('processFlow');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllTRA() {
+    const grid = document.getElementById('TRA');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllPolicies() {
+      const grid = document.getElementById('policies');
+      const items = grid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      const processBtn = document.querySelector('.category[data-category="processFlow"]');
+      if(processBtn){
+          showDocuments('processFlow', processBtn);
+      }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+    if(menuIcon && navbar) {
+      menuIcon.addEventListener("click", function(){
+        navbar.classList.toggle("active");
+      });
+    }
+  });
+</script>
+<script>
+  // Hide all document grids and remove active state from categories on load
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.document-grid').forEach(grid => {
+      grid.style.display = 'none';
+    });
+    document.querySelectorAll('.category').forEach(btn => btn.classList.remove('active'));
+
+    // Highlight Corp Governance nav link
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    navLinks.forEach(link => {
+      if (link.textContent.trim() === "Controlled Docs") {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
+ <!--
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+        authDomain: "cciarco-portal.firebaseapp.com",
+        projectId: "cciarco-portal",
+        storageBucket: "cciarco-portal.firebasestorage.app",
+        messagingSenderId: "513140257536",
+        appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+        measurementId: "G-0J0T2WDJJQ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Debugging: Check authentication state
+    onAuthStateChanged(auth, (user) => {
+        console.log("Auth state on restricted page:", user);
+        if (!user) {
+            alert("You must log in first!");
+            window.location.href = "../index.html";
+        }
+    });
+</script> -->
+<!---
+<script>
+  // Set initial mode based on localStorage
+  document.addEventListener("DOMContentLoaded", function() {
+    const modeToggle = document.getElementById('mode-toggle');
+    const isLight = localStorage.getItem('colorMode') === 'light';
+    if(isLight) {
+      document.body.classList.add('light-mode');
+      modeToggle.checked = true;
+    }
+    modeToggle.addEventListener('change', function() {
+      if(this.checked) {
+        document.body.classList.add('light-mode');
+        localStorage.setItem('colorMode', 'light');
+      } else {
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('colorMode', 'dark');
+      }
+    });
+  }); 
+</script>-->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Show disclaimer only if not acknowledged this session
+  if(sessionStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
+
+  // Hide disclaimer and set session flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      sessionStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+</body>
+</html>

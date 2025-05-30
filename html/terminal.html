@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CCIARCO Portal - Your central hub for documentation, policies, and procedures.">
+  <title>Hub</title>
+  <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  
+</head>
+<body>
+
+<header>
+  <div class="header" data-aos="fade-down">
+    <div class="header-container">
+      <a href="home.html" class="logo">
+        <img src="../images/CCIARCO.ico" alt="CCIARCO Logo" class="logo-img">
+      </a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="home.html" class="nav-link" data-aos="fade-right">Home</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="corp.html" class="nav-link" data-aos="fade-right">Corp Governance</a>
+        <a href="docs.html" class="nav-link" data-aos="fade-right">Controlled Docs</a>
+        <a href="terminal.html" class="nav-link" data-aos="fade-right">Terminal Guidelines</a>
+        <!--<a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>>-->
+         <!--  <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>-->
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="content-container">
+  <section class="document-categories" id="categories">
+    <h2>Terminal-Related Guidelines</h2>
+
+    <div class="search-box-container">                                  
+      <input type="text" class="search-box" placeholder="Search for documents..." id="search-box" oninput="searchDocuments()" aria-label="Search for documents">
+      <button class="search-btn" onclick="searchDocuments()">Search</button>
+      </div>
+
+      <div class="categories-container">
+      <button class="category" onclick="showDocuments('guides', this)" data-category="guides">References & Quick Guides</button>
+      <button class="category" onclick="showDocuments('posManual', this)" data-category="posManual">POS App Operational Manuals</button>
+      <button class="category" onclick="showDocuments('videos', this)" data-category="videos">Merchant Tutorial Videos</button>
+     </div>
+
+    <div class="document-grid" id="guides">
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 1"><a href="https://drive.google.com/file/d/18alBiiEuVASdjjZKV7D2AnkHPFR7yH5F/view" target="_blank">Abbott Purchase and QR Transactions [Sunmi P2]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 2"><a href="https://drive.google.com/file/d/1IRLrhNSxyOLwkXBDL_qlMEO67swZsgsr/view" target="_blank">Tangent's Soundbox FAQs and Quick Guide</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 3"><a href="https://drive.google.com/file/d/1EJ38Zg4rOUVJDc3LukLjhhoEuy4HKcbm/view" target="_blank">Tangent's Installment Credit [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 4"><a href="https://drive.google.com/file/d/182LHrO-rXJYJL-uqFZECxppPX75cVf3I/view" target="_blank">Tangent OnePOS-OneApp [Vx520 GPRS]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 5"><a href="https://drive.google.com/file/d/1rdxrw3M9aAGNw_aHA5dkha7Ncx4730ZJ/view" target="_blank">AllValue Group [AVG] - Credit/Debit/Installment [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 6"><a href="https://drive.google.com/file/d/1JnRiEquHiV1Mt4xsnxxviJIvtf5Jg64e/view" target="_blank">PNB Installment Credit with Manual Key-In [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 7"><a href="https://drive.google.com/file/d/1r9nNiUxQUvobcGWCkyVjd3o4PIASBwNy/view" target="_blank">Tangent-PNB OnePOS - OneApp [Vx520 GPRS]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 8"><a href="https://drive.google.com/file/d/1UuQz6om_sy3oNKFe01asRSOpQBkuIIdW/view" target="_blank">Tangent-MCC Paydroid - Straight and Installment [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 9"><a href="https://drive.google.com/file/d/1U2geixZc_419yp9oVmycRa9-v91n91_q/view" target="_blank">PAX A920 Connectivity Setup Guide</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 10"><a href="https://drive.google.com/file/d/1Bm2Acd7lbIB9AXWz7U1vREqJDNReOl3C/view" target="_blank">AllBank QRPH [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 11"><a href="https://drive.google.com/file/d/15inA9T6c6q5W8mIJrxEBYN9M9rTDsfVV/view" target="_blank">AUB Retail Debit [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 12"><a href="https://drive.google.com/file/d/17XKCNyzu0sGYh9rMI7CSaZ3JAw512Ap2/view" target="_blank">BancNet POS CashOut [Sunmi P2]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 13"><a href="https://drive.google.com/file/d/1abDhFKWoya2dkqOfHTVhRKmIfQdrXWl2/view" target="_blank">Tangent-BDO Paydroid - Straight and Installment [PAX A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 14"><a href="https://drive.google.com/file/d/1TeFaPz3fJg91QgNP9YsJpURwgoR6FMho/view" target="_blank">Euronet's Soundbox [CS60-4G]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 15"><a href="https://drive.google.com/file/d/1qGLX7l0MJgwt74-KXwuoF-GXIN-T4nHK/view" target="_blank">Tangent-Primer Group - Sale and Installment [Vx520 GPRS]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 16"><a href="https://drive.google.com/file/d/1z1ChB2OfvaqlLWVc_5Dg9IJ4OFLve2o7/view" target="_blank">Tangent-AVG eGift and eVoucher Transactions</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 17"><a href="https://drive.google.com/file/d/1aQ8_4vdlKQvpJG8Xxw6sfg9OQpmY410m/view" target="_blank">Sticker x Terminal Reference Guide</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 18"><a href="https://drive.google.com/file/d/1oc0bpLrszDBHtvL-CiNkLK0efM9s5din/view" target="_blank">Tangent-BPI Soundbox [CS60-4G]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 19"><a href="https://drive.google.com/file/d/1x35IziZL-RkpmFW9XEwpBVD3R6WGT-3T/view" target="_blank">CBC POS CashOut [A920]</a></div>
+      <div class="document-item" data-tooltip="REFERENCES QUICK GUIDES Document 20"><a href="https://drive.google.com/file/d/1H5EjlG10QD97nR_QgKr4fptexYiXEeuJ/view" target="_blank">CBC POS CashOut [Sunmi P2]</a></div>
+    </div>
+    
+
+    <div class="document-grid" id="videos">
+      <div class="document-item" data-tooltip="VIDEOS Document 1"><a href="https://drive.google.com/file/d/1xWnPXKWXCHUC0YrzLdMdy0b1m4q9NoNm/view?t=3" target="_blank">Paydroid [Sale and Installment]</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 2"><a href="https://drive.google.com/file/d/19WwwUCFOG8MQb8XWv5keqDmG9qo0l8UR/view?t=6" target="_blank">A920 Debit</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 3"><a href="https://drive.google.com/file/d/1awnk_3fVgCvDlzEtQDoncoEPcrBieygb/view?t=1" target="_blank">AllBank QRPH</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 4"><a href="https://drive.google.com/file/d/1DrZsS2C6ugjsiugzTCsaYgaLmr-waRrf/view" target="_blank">BancNet POS CashOut</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 5"><a href="https://drive.google.com/file/d/1NFaakDOygOEDhkb4qybPT30xoZuL6WMX/view" target="_blank">Soundbox [CS60-4G]</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 6"><a href="https://drive.google.com/file/d/1Faisucw0yB5s00lIt1qFarmotD46Q-ly/view?t=2" target="_blank">FTS's Test Card Management Webinar Video</a></div>
+      <div class="document-item" data-tooltip="VIDEOS Document 7"><a href="https://drive.google.com/file/d/1Mp2SpxrEng9AY-LCOEkRbWuu4j2j0-Jv/view?t=2" target="_blank">POSPrep's Test Card Management Webinar Video</a></div>
+    </div>
+
+    <div class="document-grid" id="posManual">
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 1"><a href="https://drive.google.com/file/d/1VQMfdEDgJIQ7cipZQtdv_kfYnJWWKNDT/view" target="_blank">A50 Smart Mini Payment Terminal v1.0</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 2"><a href="https://drive.google.com/file/d/1UbTBtqrEkrxg_PoJ6tga-1RcbdooBlEy/view" target="_blank">A920 GP 1.02.08_20220726</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 3"><a href="https://drive.google.com/file/d/1MsEgiNoQ-I2rP9q9IEhYDNMfYnOuvjLl/view" target="_blank">Paymaya PML 3.04</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 4"><a href="https://drive.google.com/file/d/1cKTtHvBDzsdP-wRvErwvf0Hjh-oDJue3/view" target="_blank">A920 Landbank Agent Banking</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 5"><a href="https://drive.google.com/file/d/1hexPRsU1XIZcuEcoLLhXD4L3DlTs39qt/view" target="_blank">BBPOS WisePad 2</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 6"><a href="https://drive.google.com/file/d/1Ewl7OYw4ONXa8fz5vl9dyCAzvsU299xI/view" target="_blank">Sunmi P2</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 7"><a href="https://drive.google.com/file/d/1NVljJlONQ-lH_vyxpI39L8PO2-VrfKe3/view" target="_blank">Petron Fleet</a></div>
+      <div class="document-item" data-tooltip="POS APP OPERATION MANUAL Document 8"><a href="https://drive.google.com/file/d/1JV74-TIVuYLotlJ9xt1CcQA186FIItD9/view" target="_blank">Puregold CTLS Vx520</a></div>
+    </div>
+      <p id="disclaimer-box" style="max-width:700px;margin:32px auto 0 auto;padding:16px 24px 56px 24px;background:#fffbe7;border-left:6px solid #ffc107;color:#333;font-size:1.08em;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:6px; position:relative; text-align:left;">
+        <strong style="font-size:1.5em;display:block;text-align:center;margin-bottom:8px;">Disclaimer</strong>
+        <strong>Document Use Notice:</strong> 
+        All documents in this portal are confidential. They must not be copied, reproduced, or shared without prior approval from CCIARCO—except for designated forms, which may be downloaded for your use. Unauthorized distribution may result in disciplinary or legal action.
+        <br>
+        <strong>Access Control:</strong><br>
+        Accessibility is role-based and on a need-to-know basis. You may request access for specific documents if necessary. To do this, you may email 
+        <a href="mailto:cciarco-core@tangentsolutionsinc.com" style="color:#d35400;font-weight:bold;text-decoration:underline;">cciarco-core@tangentsolutionsinc.com</a>
+        with the requestor’s name, position, email, and reason.
+        <button onclick="document.getElementById('disclaimer-box').style.display='none';"
+          style="position:absolute;bottom:18px;right:24px;padding:6px 24px;border:none;border-radius:5px;background:#ffc107;color:#333;font-weight:bold;cursor:pointer;">
+          OK
+        </button>
+      </p>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>&copy; 2025 Tangent Solutions Inc. | All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 200,
+    easing: 'ease-in-out',
+  });
+</script>
+<script src="js/script.js"></script>
+<script>
+  function showDocuments(categoryId, element) {
+    const allGrids = document.querySelectorAll('.document-grid');
+    allGrids.forEach(grid => grid.style.display = 'none');
+
+    const categoryGrid = document.getElementById(categoryId);
+    if (!categoryGrid) {
+      console.error(`Category ID "${categoryId}" not found.`);
+      return;
+    }
+    categoryGrid.style.display = 'grid';
+
+    const allCategories = document.querySelectorAll('.category');
+    allCategories.forEach(category => category.classList.remove('active'));
+
+    element.classList.add('active');
+  }
+
+  function searchDocuments() {
+    const keyword = document.getElementById('search-box').value.toLowerCase();
+    const allDocuments = document.querySelectorAll('.document-item');
+    let matchedCategory = null;
+
+    allDocuments.forEach(doc => {
+      const text = doc.textContent.toLowerCase();
+      if (text.includes(keyword)) {
+        doc.style.display = 'block';
+        matchedCategory = doc.closest('.document-grid').id;
+      } else {
+        doc.style.display = 'none';
+      }
+    });
+
+    if (matchedCategory) {
+      const matchedCategoryElement = document.querySelector(`.category[data-category="${matchedCategory}"]`);
+      showDocuments(matchedCategory, matchedCategoryElement);
+    }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const items = document.querySelectorAll('.document-item');
+    items.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Ensure clicking the item triggers the link
+        const link = this.querySelector('a');
+        if(link) {
+          window.open(link.href, link.target || '_self');
+        }
+      });
+    });
+  });
+
+  // Updated function: using computed style for a one-click toggle
+  function departmentAction(header) {
+    console.log("Department " + header.textContent.trim() + " clicked");
+    const container = header.parentElement;
+    const items = container.querySelectorAll('.document-item');
+    items.forEach(item => {
+      const computedDisplay = window.getComputedStyle(item).display;
+      item.style.display = (computedDisplay === 'none') ? 'block' : 'none';
+    });
+  }
+
+  function toggleAllForms() {
+      const formsGrid = document.getElementById('forms');
+      const items = formsGrid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          // Hide all items
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          // Show all items
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+
+  // New function for processFlow, similar to toggleAllForms
+  function toggleAllProcessFlow() {
+    const grid = document.getElementById('processFlow');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllTRA() {
+    const grid = document.getElementById('TRA');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllPolicies() {
+      const grid = document.getElementById('policies');
+      const items = grid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      const processBtn = document.querySelector('.category[data-category="processFlow"]');
+      if(processBtn){
+          showDocuments('processFlow', processBtn);
+      }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+    if(menuIcon && navbar) {
+      menuIcon.addEventListener("click", function(){
+        navbar.classList.toggle("active");
+      });
+    }
+  });
+</script>
+<script>
+  // Hide all document grids and remove active state from categories on load
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.document-grid').forEach(grid => {
+      grid.style.display = 'none';
+    });
+    document.querySelectorAll('.category').forEach(btn => btn.classList.remove('active'));
+
+    // Highlight Corp Governance nav link
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    navLinks.forEach(link => {
+      if (link.textContent.trim() === "Terminal Guidelines") {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
+ <!----
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+        authDomain: "cciarco-portal.firebaseapp.com",
+        projectId: "cciarco-portal",
+        storageBucket: "cciarco-portal.firebasestorage.app",
+        messagingSenderId: "513140257536",
+        appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+        measurementId: "G-0J0T2WDJJQ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Debugging: Check authentication state
+    onAuthStateChanged(auth, (user) => {
+        console.log("Auth state on restricted page:", user);
+        if (!user) {
+            alert("You must log in first!");
+            window.location.href = "../index.html";
+        }
+    });
+</script>-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Show disclaimer only if not acknowledged this session
+  if(sessionStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
+
+  // Hide disclaimer and set session flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      sessionStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+</body>
+</html>

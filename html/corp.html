@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CCIARCO Portal - Your central hub for documentation, policies, and procedures.">
+  <title>Hub</title>
+  <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+
+<header>
+  <div class="header" data-aos="fade-down">
+    <div class="header-container">
+      <a href="home.html" class="logo">
+        <img src="../images/CCIARCO.ico" alt="CCIARCO Logo" class="logo-img">
+      </a>
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="home.html" class="nav-link" data-aos="fade-right">Home</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="corp.html" class="nav-link" data-aos="fade-right">Corp Governance</a>
+        <a href="docs.html" class="nav-link" data-aos="fade-right">Controlled Docs</a>
+        <a href="terminal.html" class="nav-link" data-aos="fade-right">Terminal Guidelines</a>
+        <!--<a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>>-->
+        <!--  <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>-->
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="content-container">
+  <section class="document-categories" id="categories">
+    <h2>Corporate Governance</h2>
+
+    <div class="search-box-container">                                  
+      <input type="text" class="search-box" placeholder="Search for documents..." id="search-box" oninput="searchDocuments()" aria-label="Search for documents">
+      <button class="search-btn" onclick="searchDocuments()">Search</button>
+      </div>
+
+      <div class="categories-container">
+      <button class="category" onclick="showDocuments('policies', this)" data-category="policies">Policies & Procedures</button>
+      <button class="category" onclick="showDocuments('SOI', this)" data-category="SOI">SOIs</button>
+      <button class="category" onclick="showDocuments('TRA', this)" data-category="TRA">TRAs</button>
+      </div>
+ 
+      <div class="document-grid" id="TRA">
+      <!-- Toggle button updated to call toggleAllTRA() -->
+      <div class="show-all-btn" onclick="toggleAllTRA()">
+        <i class='bx bx-show'></i> Show All
+      </div>
+      <div class="department-section">
+      <h3 onclick="departmentAction(this)">HCMD</h3>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 1"><a href="https://drive.google.com/file/d/1ECF6FXfRqsTaqFaH3XjdQ9nXqRVhMubt/view" target="_blank">Employee Relations</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 2"><a href="https://drive.google.com/file/d/1HfzE0KIfFIz5IzUdr2Te8JVmYUOGYXcE/view" target="_blank">Recruitment and Selection Management</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 3"><a href="https://drive.google.com/file/d/15FMrN-4AsXBzHxK7-5A3LafXvkVXuZNt/view" target="_blank">Employee Engagement</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 4"><a href="https://drive.google.com/file/d/1a6IwftYJEK5T6iKLC3mYbP8X_G9j_oek/view" target="_blank">Learning and Development [Onboarding and Training]</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 5"><a href="https://drive.google.com/file/d/19Xeqa0HOyVEHLa6I3sCXSF37kiNw67fY/view" target="_blank">HR Data Governance and Compliance Protocol</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 6"><a href="https://drive.google.com/file/d/1cciKsOelFWMUkipnGosNHjh5H67_3_b5/view" target="_blank">Compensation and Benefits Program</a></div>
+      <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 50"><a href="https://drive.google.com/file/d/1u6wGRSo8ArLu4HkPsRQ76gaSVZRw50xv/view" target="_blank">Government Loans Monitoring Report</a></div>
+      </div>
+
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">SMD</h3>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 7"><a href="https://drive.google.com/file/d/1SP45OlgRdAOlwP8heVhBKMsBQKqDmokE/view" target="_blank">Merchant Profile Management</a></div>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 8"><a href="https://drive.google.com/file/d/1j5-9L6FU-zRTJoqc3qu_mbSTFn8nLowE/view" target="_blank">Merchant Profile Management</a></div>
+         <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 9"><a href="https://drive.google.com/file/d/1F9qX8M2VgE8K06tkev0SUByHtsiTdp22/view" target="_blank">Helpdesk Management [Technical Support]</a></div>     
+      </div>   
+      
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">GAPD</h3>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 10"><a href="https://drive.google.com/file/d/1OukTpOCmrz_ami3K25i6tQ0LQ_FrCNwk/view" target="_blank">Government Compliances Management</a></div>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 11"><a href="https://drive.google.com/file/d/1thWpr4V5cT7uy0u3e89ALCC2zqtm8W22/view" target="_blank">Local Procurement Management</a></div>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 12"><a href="https://drive.google.com/file/d/1n3eUnBqXlyYndvkkMgAZxfwRqS63qJtL/view" target="_blank">Importation with Government Compliances</a></div>
+        <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 13"><a href="https://drive.google.com/file/d/1-H4mNg5Tao8Avyj_ZURf92K8b1M3meyA/view" target="_blank">Visitor Access Control Management</a></div>
+      </div>
+      
+        <div class="department-section">
+        <h3 onclick="departmentAction(this)">FAD</h3>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 14"><a href="https://drive.google.com/file/d/15CCTjl7PmiIOpq7Cpv4FaqCG0sb1sLuA/view" target="_blank">Sales Book and Checklist Monitoring</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 15"><a href="https://drive.google.com/file/d/1P_xLcSKKLADCBdvg8XRMHlljgK4Ink93/view" target="_blank">Collections Oversight</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 16"><a href="https://drive.google.com/file/d/1b_Mysz-ROSYxvvMT84z3tgorJe3Qjg_B/view" target="_blank">Disbursement [external]</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 17"><a href="https://drive.google.com/file/d/1F45sHdFbf05TCn_F3DjsI_ogpYPfKIBI/view" target="_blank">Disbursement [internal]</a></div>
+        </div>
+
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">FTS</h3>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 18"><a href="https://drive.google.com/file/d/1JGtF3CZjDVeR0j3QSH3whKjwQizo356j/view" target="_blank">POS Terminal On-Hand [Provincial]</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 19"><a href="https://drive.google.com/file/d/1fJdcXFkTe4WR8lFqP8fwKfcuY5agK8hp/view" target="_blank">POS Terminal On-Hand [NCR]</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 20"><a href="https://drive.google.com/file/d/1WzdfS8k4kg6vFBap39rmQ6o1bnrMoqxx/view" target="_blank">Field Service Report [FSR] and POS-related Assets</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 21"><a href="https://drive.google.com/file/d/1VUd7QqrCkxjD5CudBx60FYd75xA7sajP/view" target="_blank">POS Terminal Inspection Control</a></div>
+        </div>
+
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">PTSS</h3>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 22"><a href="https://drive.google.com/file/d/1eK_dH3iIFD1yajV-e97dRn4-rxhnyBcR/view" target="_blank">Receiving FSR with Assets and FSR Only</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 23"><a href="https://drive.google.com/file/d/1OHPi1RiHNXEqk67NyD6cioZBUlvyaOr-/view" target="_blank">POS Terminal Assets Warehousing Management</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 24"><a href="https://drive.google.com/file/d/1broinJx9uMA_OlpNKebrtJrLwDJ_DH6N/view" target="_blank">Releasing of POS Assets</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 25"><a href="https://drive.google.com/file/d/1uAy-4AXZ2NleaRPEPJhqz3xim8rK8kyB/view" target="_blank">POS Assets Diagnosis and Repair</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 27"><a href="https://drive.google.com/file/d/1bG56RR_l-2z3QQqtPjJ4mFNSc-hnEWrB/view" target="_blank">Outbound Logistics</a></div>
+          <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 26"><a href="https://drive.google.com/file/d/1oto65NxQSXbrTbXbXnsm-3lD9l1C_haP/view" target="_blank">POS Terminal Provisioning and Application Setup</a></div>
+        </div>
+
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">CCIARCO</h3>
+             <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 28"><a href="https://drive.google.com/file/d/1iDCepyuqjOP9371RnFaPY2kIkTgXz-nq/view?usp=sharing" target="_blank">Final Quality Inspection [FQI]</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 29"><a href="https://drive.google.com/file/d/1Pw9-jvWxn1GuO6bfg0JGX_O0dom1K_6U/view" target="_blank">Calendarization of Statutory Compliances</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 30"><a href="https://drive.google.com/file/d/1nZcJRp04OzaCcJOaY0Lzccda3DjjMSNM/view" target="_blank">Incident Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 31"><a href="https://drive.google.com/file/d/1ZFo6IfKeY42EYGiOdluwuJFvJjUWizb2/view" target="_blank">Regular Audit Cycle [RAC] Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 32"><a href="https://drive.google.com/file/d/1I3E1ozHlMIXCP2QV2qDnOoCTFMbMjaaV/view" target="_blank">Closed Circuit Television [CCTV] Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 33"><a href="https://drive.google.com/file/d/1x0cYPYV66YZ21iglT0NUDg9KXu0wJG9y/view" target="_blank">One Internal SLA Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 34"><a href="https://drive.google.com/file/d/1AVV12cieAixcWtOghCEslfFz4-ximOIT/view" target="_blank">Management Report Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 35"><a href="https://drive.google.com/file/d/1eaK0PYQPlTUlOblONkM4jzbDGapB6dYC/view" target="_blank">Enterprise Risk Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 51"><a href="https://drive.google.com/file/d/1HDkh45DoclxZbZjQQpqAwlMALJOR9A1-/view" target="_blank">Change Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 52"><a href="https://drive.google.com/file/d/1EqJ1jiG_PL5SJQGk4kmJICfFTrk-yymC/view" target="_blank">Incident Handling Awareness and Training</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 53"><a href="https://drive.google.com/file/d/1PjuZihwdCPUTrXTgv_xiYsiufzaHxpsU/view" target="_blank">CyberSecurity Services Vulnerability and Mitigation Management</a></div>   
+            </div>
+
+
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">PMO</h3>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 36"><a href="https://drive.google.com/file/d/11wkkFDb2qfhYORJiCFXa_I6W6U1fIsI6/view" target="_blank">Project Schedule</a></div>
+            </div>
+
+          <div class="department-section">
+           <h3 onclick="departmentAction(this)">PTSD</h3>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 37"><a href="https://drive.google.com/file/d/1GT9JWyULd2XXk8rcM-FTFkur-kgfzz3f/view" target="_blank">System Components Monitoring [POSG, POSDB]</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 38"><a href="https://drive.google.com/file/d/1QCZSCzvubdnBeEYyhCx7kHwsAsLM190C/view" target="_blank">Periodic Malware Scanning</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 39"><a href="https://drive.google.com/file/d/1-qOmcqm3US9r1VMcWa8jXEnpS_XmcV8t/view" target="_blank">Application and System Accounts Privileges</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 40"><a href="https://drive.google.com/file/d/1Ra_QAzqtaNHmzb1govvJVh0QUNtui-Iw/view" target="_blank">Password Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 41"><a href="https://drive.google.com/file/d/1zT7WxAo6KddNgq9lAqk5beNamTIalKma/view" target="_blank">Log Reviews</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 42"><a href="https://drive.google.com/file/d/1XtLwhaufDJcTSGxfFe7aeOR-XFvLXGkO/view" target="_blank">Patch Updating  on Applicable Vulnerability</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 43"><a href="https://drive.google.com/file/d/1YjT5m6yj5t9SDf7stVEJtsQr9TRWIbtV/view" target="_blank">Card Data Discovery on Applicable Vulnerability</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 44"><a href="https://drive.google.com/file/d/1VlMUJSEfMOhFMu6RRUaEUxgSnhSQEJwp/view" target="_blank">Service Status on Applicable Vulnerability</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 45"><a href="https://drive.google.com/file/d/10F7yuj3bUvKkQXHWS82zcZCJW33fbltc/view" target="_blank">EOS Devices Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 46"><a href="https://drive.google.com/file/d/1JfLuTOL6er9G6Fi6TE1e2NJTWkEnXQPA/view" target="_blank">Application Version Management</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 47"><a href="https://drive.google.com/file/d/1hIftXjoAh3kJ0zBeoQlcw4QXmRhhtBu-/view" target="_blank">Android Application Vulnerability Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 48"><a href="https://drive.google.com/file/d/19A61UaC-DH77Dy26mRKfDdr3WaEj2BR7/view" target="_blank">POSG Application Vulnerability Monitoring</a></div>
+              <div class="document-item" data-tooltip="TARGETED RISK ANALYSIS Document 49"><a href="https://drive.google.com/file/d/1tsuHdaB5SDXm0vFX11v3vbhHoYkhqR0P/view" target="_blank">Relational DB Management System</a></div>
+          </div>
+           
+        </div>
+
+
+        <div class="document-grid" id="policies">
+          <!-- Toggle button updated to call toggleAllPolicies() instead of toggleAllTRA() -->
+          <div class="show-all-btn" onclick="toggleAllPolicies()">
+            <i class='bx bx-show'></i> Show All
+          </div>
+         <div class="department-section">
+          <h3 onclick="departmentAction(this)">GAPD</h3>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 1"><a href="https://drive.google.com/file/d/1lGRWtf45rH-XRZC8qCW0Jkf1kMiaE0AJ/view" target="_blank">General Office Administration Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 2"><a href="https://drive.google.com/file/d/1LFFfx-py3rZlYqbGsM-rUHvAni2ChLks/view?usp=sharing" target="_blank">Procurement Policies and Procedures</a></div> 
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 32"><a href="https://drive.google.com/file/d/1TeCX0Vp4TlzA0ISUbbZp3m3IHFL7zloc/view" target="_blank">Third Party Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 38"><a href="https://drive.google.com/file/d/1YdT9k-6YmorsFemUIwWjgyFX32tpVPDz/view" target="_blank">Physical Security Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 50"><a href="https://drive.google.com/file/d/1_ZdE44km-XaRRNMGg5Glcio0NO9ii2Lq/view" target="_blank">No Photography and Videography Policy</a></div>
+         </div>
+
+         <div class="department-section">
+          <h3 onclick="departmentAction(this)">CCIARCO</h3>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 3"><a href="https://drive.google.com/file/d/11b5bbYr_2eJVQzjMBCzG3K1bhidVI37k/view" target="_blank">Corrective and Preventive Actions [CAPA] to Nonconformities and Quality Management Issues</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 4"><a href="https://drive.google.com/file/d/1RAyk0vDqeCMzXnMfQ5qPe4ZfkkHRe0XI/view" target="_blank">Document Control Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 5"><a href="https://drive.google.com/file/d/16IZXS5c3yg7C43ycAXMueHVnbtUGJy21/view?usp=sharing" target="_blank">Quality Manual</a></div> 
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 22"><a href="https://drive.google.com/file/d/19hpPH5NuwVEr8-pzm2W-vGgZ8a9FZVns/view" target="_blank">Enterprise Risk Management and Integrated Framework Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 24"><a href="https://drive.google.com/file/d/1JpXqd_ZLCDS6H3ulzQEovlADVj3mu_or/view" target="_blank">Business Continuity Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 25"><a href="https://drive.google.com/file/d/1FgPdoqL6mNOhb9d3r2XXodNDdsLXXoP5/view" target="_blank">Closed-Circuit Television [CCTV]  Policies and Procedures</a></div>   
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 26"><a href="https://drive.google.com/file/d/15191VRtct3PYqSJyWoUMV0HhPkSAtv_9/view" target="_blank">Data Privacy Polices and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 27"><a href="https://drive.google.com/file/d/1VA0QBJSMNeF5eKl8gf8iSCZ2flIwPVDO/view" target="_blank">Health, Safety & Enviromental Polices and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 28"><a href="https://drive.google.com/file/d/19bR9O1A0SC-xOocsHARp8dHpbCgs_1_C/view" target="_blank">PCI DSS Project Charter 2024</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 29"><a href="https://drive.google.com/file/d/1lDjjB8Y6gwDoIABulOT94QRRg2B_ltan/view" target="_blank">Information Security Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 30"><a href="https://drive.google.com/file/d/1heSLplYMMFYQXyPBctwnwqacRjQbsMSd/view" target="_blank">Change Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 31"><a href="https://drive.google.com/file/d/1EhJfEPCNe7OpWi230qtEQMeoK1Y1xtJI/view" target="_blank">Incident Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 37"><a href="https://drive.google.com/file/d/1dty6yfBA5edANqLf4gTxth_M8gBfLXQ9/view" target="_blank">Key Management Policies and Procedures</a></div>
+            <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 49"><a href="https://drive.google.com/file/d/1tBGFS7myyJWMQXsoPZ6lzqoQBFTptDPy/view" target="_blank">Test Card Management Policies and Procedures</a></div>
+          </div>   
+
+         <!--   <div class="department-section">
+              <h3 onclick="departmentAction(this)">SMD</h3>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 6"><a href="#" target="_blank">Customer Service Helpdesk Support Policies and Procedures</a></div>
+            </div> -->
+
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">FAD</h3>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 7"><a href="https://drive.google.com/file/d/1np9UEmMpUiyNsQz3aGVknlqrRFrzVOM4/view" target="_blank">Petty Cash Fund Policies and Procedures</a></div>
+              </div>
+
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">HCMD</h3>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 8"><a href="https://drive.google.com/file/d/1gBqIdE-U3cDrudV8xVWjNYeZ-st0hZlo/view" target="_blank">Attendance and Timekeeping Policies and Guidelines</a></div>
+            <!-- <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 9"><a href="https://drive.google.com/file/d/1VmD5s_8aIaOEwhcGgv6rC97z6qfAsIGU/view" target="_blank">Covid-19 Preventive Measures and Guidelines Part II</a></div> -->
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 9"><a href="https://drive.google.com/file/d/1HPC1XzyJLVG0w1gC6u_FOuNK91xa8tdc/view" target="_blank">Employee Referral Program Policy</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 11"><a href="https://drive.google.com/file/d/1U1Uk3iASNLp5rTyRWRsnZz-jdoTCdeOY/view" target="_blank">Employee Salary Loan Assistance</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 12"><a href="https://drive.google.com/file/d/1vn-DhA5qXu2rP--hZ51wQsXuafGTDlwT/view" target="_blank">Handling Disciplinary Action Policy</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 13"><a href="https://drive.google.com/file/d/16hHtP3rsOHQp6mLU3Ohe68ONDSfCB3iy/view" target="_blank">Motorcycle Maintenance Allowance</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 14"><a href="https://drive.google.com/file/d/1gGAptvRHXPNSRaAyXiRrV63CYV7e-dKK/view" target="_blank">Overtime Policies and Guidelines</a></div>
+             <!-- <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 15"><a href="https://drive.google.com/file/d/1Zpl0nZlaukaY-Z90WjMyD3vy0Cp3DhDA/view" target="_blank">Replacement of Company-Owned Mobile Phones</a></div> -->
+              <!-- <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 16"><a href="https://drive.google.com/file/d/1MO0kjOIbkm0r-ihafCWvUHthUa_RtYQW/view" target="_blank">Service Milestone Award</a></div> -->
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 17"><a href="https://drive.google.com/file/d/1n2y2wlw3wX8QfrhZo2Nb5--jkh-oaGfk/view" target="_blank">Sexual Harassment</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 18"><a href="https://drive.google.com/file/d/1k_IDH_1kOSic9AUX7ibjqqCfr-EkyidP/view" target="_blank">Work from Home Program</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 19"><a href="https://drive.google.com/file/d/1j99oLqpSGxncEBv1nvIC4bUZ8VuL895g/view?usp=drive_link" target="_blank">Uniform Policy</a></div> 
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 44"><a href="https://drive.google.com/file/d/1AUWs5sin7UixxDeL7aiYtpTfX4F4kn5g/view" target="_blank">Career and Leadership Advancement Program [CLAP]</a></div>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 48"><a href="https://drive.google.com/file/d/1YZitDeKpyTXYwnaS8tZAZDPX2iy7J9sk/view" target="_blank">Departmental Employee Rewards and Recognition Program Policy</a></div>
+            </div>
+            
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">PMO</h3>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 20"><a href="https://drive.google.com/file/d/1ULAnNEIiHfI4q7udYuGQUyDGxfnlAyOk/view" target="_blank">Project Management Policies and Procedures</a></div>
+            </div>
+            
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">PTSD</h3>
+               <!-- <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 21"><a href="#" target="_blank">PTSD Helpdesk Support Policies and Procedures</a></div> -->
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 33"><a href="https://drive.google.com/file/d/1rAr3K98Z0-rm2OVjlPkepMMqq-2ze58v/view" target="_blank">Access Control Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 34"><a href="https://drive.google.com/file/d/1luVDGq_tTqJQ9jzT8SgmFmaEOVsAuXWv/view" target="_blank">Anti-Malware Management Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 35"><a href="https://drive.google.com/file/d/1gGeyWsqFmqI1orKN7NS13THOY_T6sZAC/view" target="_blank">Audit Log and Monitoring Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 36"><a href="https://drive.google.com/file/d/1RFvGrXv1-sf_16kcD1RBYBrCYv3MdR0D/view" target="_blank">Configuration Management Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 39"><a href="https://drive.google.com/file/d/1fO0_ULhFz4GQgOWE7I0rsdoInBw2MqIo/view" target="_blank">Remote Access Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 40"><a href="https://drive.google.com/file/d/18332OC8YhQuUmgvOguyoFAntQVNh1Hfe/view" target="_blank">Software Development Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 41"><a href="https://drive.google.com/file/d/1BqdSlvSEXwTRSIVrvalyrWn79DNtT13W/view" target="_blank">Technology Usage Policies and Procedures</a></div>
+                <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 42"><a href="https://drive.google.com/file/d/19_uGduPfXI_FhC08Kh58vz57Bh7stE5x/view" target="_blank">Vulnerability Management Policies and Procedures</a></div>
+                <!--<div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 45"><a href="https://drive.google.com/file/d/1Gt76twnFcJ0uEt6t0gf4JCF4VE4fwSS_/view" target="_blank">Disaster Recovery Plan and Exercise [SOI]</a></div>-->
+            </div>  
+            <div class="department-section">
+              <h3 onclick="departmentAction(this)">PTSS</h3>
+              <div class="document-item" data-tooltip="POLICIES AND PROCEDURES Document 23"><a href="https://drive.google.com/file/d/1aVh6782mKUn_ke0LDr_6012iEd12Hy-c/view?usp=sharing" target="_blank">POS Repair Services</a></div>
+            </div>     
+      </div>
+      <div class="document-grid" id="SOI">
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 1"><a href="https://drive.google.com/file/d/1CvEROldgoxAyoD3r9PN1zs6oYyMwrszX/view" target="_blank">EWB Push Activation</a></div>
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 2"><a href="https://drive.google.com/file/d/1Ej0cjRWdIQ5-nVZj3DbcdTEporEoWW3y/view" target="_blank">Quality Inspection and Assurance for POS Terminal Deployment</a></div>
+      <!--  <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 3"><a href="#" target="_blank">Super FT Project</a></div>-->
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 4"><a href="https://drive.google.com/file/d/1fU3kM7rJ1Q6G-Tyu6Yn5CwI87Und0qVm/view" target="_blank">Key Encryption Guidelines</a></div>
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 5"><a href="https://drive.google.com/file/d/13DVPK_7t5QVFldT5V2L83jXwwnMNCQfn/view" target="_blank">Service Level Management Document [SLMD]</a></div>
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 5"><a href="https://drive.google.com/file/d/1VlHs7D1kNZ9NMIxNMXfL2dENmAFjFKZZ/view?usp=sharing" target="_blank">POS Terminal Troubleshooting</a></div>
+      <div class="document-item" data-tooltip="STANDARD OPERATIONAL INSTRUCTIO Document 6"><a href="https://drive.google.com/file/d/1zdS-Z5ujZmcomScGMlOSxgrM9osibnbD/view" target="_blank">POS Terminal Support Services Guidelines [Warehouse Operations and Storage]</a></div>
+     </div>
+      <p id="disclaimer-box" style="max-width:700px;margin:32px auto 0 auto;padding:16px 24px 56px 24px;background:#fffbe7;border-left:6px solid #ffc107;color:#333;font-size:1.08em;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:6px; position:relative; text-align:left;">
+        <strong style="font-size:1.5em;display:block;text-align:center;margin-bottom:8px;">Disclaimer</strong>
+        <strong>Document Use Notice:</strong> 
+        All documents in this portal are confidential. They must not be copied, reproduced, or shared without prior approval from CCIARCO—except for designated forms, which may be downloaded for your use. Unauthorized distribution may result in disciplinary or legal action.
+        <br>
+        <strong>Access Control:</strong><br>
+        Accessibility is role-based and on a need-to-know basis. You may request access for specific documents if necessary. To do this, you may email 
+        <a href="mailto:cciarco-core@tangentsolutionsinc.com" style="color:#d35400;font-weight:bold;text-decoration:underline;">cciarco-core@tangentsolutionsinc.com</a>
+        with the requestor’s name, position, email, and reason.
+        <button onclick="document.getElementById('disclaimer-box').style.display='none';"
+          style="position:absolute;bottom:18px;right:24px;padding:6px 24px;border:none;border-radius:5px;background:#ffc107;color:#333;font-weight:bold;cursor:pointer;">
+          OK
+        </button>
+      </p>
+     </section>
+  
+    </div>
+<!-- Add this before </body> -->
+<div id="tra-notif-modal" style="display:none; position:fixed; z-index:99999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+  <div style="background:#fff; color:#222; border-radius:10px; padding:32px 24px; max-width:350px; width:90%; text-align:center; box-shadow:0 4px 32px rgba(0,0,0,0.18);">
+    <p style="margin-bottom:24px;">
+      <strong>Note:</strong><br>
+      You can access the TRA upon request by emailing<br>
+      <a href="mailto:cciarco.core@tangentsolutionsinc.com" style="color:#007bff;">cciarco.core@tangentsolutionsinc.com</a>
+    </p>
+    <button onclick="document.getElementById('tra-notif-modal').style.display='none';" style="padding:8px 32px; border:none; border-radius:6px; background:#007bff; color:#fff; font-size:1rem; cursor:pointer;">OK</button>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-text">
+    <p>&copy; 2025 Tangent Solutions Inc. | All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 200,
+    easing: 'ease-in-out',
+  });
+</script>
+<script src="js/script.js"></script>
+<script>
+  function showDocuments(categoryId, element) {
+    const allGrids = document.querySelectorAll('.document-grid');
+    allGrids.forEach(grid => grid.style.display = 'none');
+
+    const categoryGrid = document.getElementById(categoryId);
+    if (!categoryGrid) {
+      console.error(`Category ID "${categoryId}" not found.`);
+      return;
+    }
+    categoryGrid.style.display = 'grid';
+
+    const allCategories = document.querySelectorAll('.category');
+    allCategories.forEach(category => category.classList.remove('active'));
+
+    element.classList.add('active');
+  }
+
+  function searchDocuments() {
+    const keyword = document.getElementById('search-box').value.toLowerCase();
+    const allDocuments = document.querySelectorAll('.document-item');
+    let matchedCategory = null;
+
+    allDocuments.forEach(doc => {
+      const text = doc.textContent.toLowerCase();
+      if (text.includes(keyword)) {
+        doc.style.display = 'block';
+        matchedCategory = doc.closest('.document-grid').id;
+      } else {
+        doc.style.display = 'none';
+      }
+    });
+
+    if (matchedCategory) {
+      const matchedCategoryElement = document.querySelector(`.category[data-category="${matchedCategory}"]`);
+      showDocuments(matchedCategory, matchedCategoryElement);
+    }
+  }
+</script>
+<script>
+ document.addEventListener("DOMContentLoaded", function(){
+    const items = document.querySelectorAll('.document-item');
+    items.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Only open the link if NOT inside the TRA grid
+        if (!this.closest('#TRA')) {
+          const link = this.querySelector('a');
+          if(link) {
+            window.open(link.href, link.target || '_self');
+          }
+        }
+      });
+    });
+  });
+
+  // Updated function: using computed style for a one-click toggle
+  function departmentAction(header) {
+    console.log("Department " + header.textContent.trim() + " clicked");
+    const container = header.parentElement;
+    const items = container.querySelectorAll('.document-item');
+    items.forEach(item => {
+      const computedDisplay = window.getComputedStyle(item).display;
+      item.style.display = (computedDisplay === 'none') ? 'block' : 'none';
+    });
+  }
+
+  function toggleAllForms() {
+      const formsGrid = document.getElementById('forms');
+      const items = formsGrid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          // Hide all items
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          // Show all items
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+
+  // New function for processFlow, similar to toggleAllForms
+  function toggleAllProcessFlow() {
+    const grid = document.getElementById('processFlow');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllTRA() {
+    const grid = document.getElementById('TRA');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+    }
+  }
+
+  function toggleAllPolicies() {
+      const grid = document.getElementById('policies');
+      const items = grid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      const processBtn = document.querySelector('.category[data-category="processFlow"]');
+      if(processBtn){
+          showDocuments('processFlow', processBtn);
+      }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+    if(menuIcon && navbar) {
+      menuIcon.addEventListener("click", function(){
+        navbar.classList.toggle("active");
+      });
+    }
+  });
+</script>
+<script>
+  // Hide all document grids and remove active state from categories on load
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.document-grid').forEach(grid => {
+      grid.style.display = 'none';
+    });
+    document.querySelectorAll('.category').forEach(btn => btn.classList.remove('active'));
+
+    // Highlight Corp Governance nav link
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    navLinks.forEach(link => {
+      if (link.textContent.trim() === "Corp Governance") {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const traGrid = document.getElementById('TRA');
+  if (traGrid) {
+    traGrid.querySelectorAll('.document-item a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('tra-notif-modal').style.display = 'flex';
+      });
+    });
+    traGrid.querySelectorAll('.document-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('tra-notif-modal').style.display = 'flex';
+      });
+    });
+  }
+});
+</script>
+ <!----
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+        authDomain: "cciarco-portal.firebaseapp.com",
+        projectId: "cciarco-portal",
+        storageBucket: "cciarco-portal.firebasestorage.app",
+        messagingSenderId: "513140257536",
+        appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+        measurementId: "G-0J0T2WDJJQ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Debugging: Check authentication state
+    onAuthStateChanged(auth, (user) => {
+        console.log("Auth state on restricted page:", user);
+        if (!user) {
+            alert("You must log in first!");
+            window.location.href = "../index.html";
+        }
+    });
+</script>-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if disclaimer was already acknowledged
+  if(localStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
+
+  // Set flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      localStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if disclaimer was already acknowledged
+  if(localStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
+
+  // Set flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      localStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Show disclaimer only if not acknowledged this session
+  if(sessionStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
+
+  // Hide disclaimer and set session flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      sessionStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+</body>
+</html>
