@@ -4,21 +4,20 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TIP</title>
+  <meta name="description" content="CCIARCO Portal - Your central hub for documentation, policies, and procedures.">
+  <title>Hub</title>
   <link rel="icon" href="../images/CCIARCO.ico" type="image/x-icon">
 
-  <!-- box icons -->
+  <!-- Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
-  <!-- custom css -->
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/hub.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
-<body>
+
+
 <header>
   <div class="header" data-aos="fade-down">
     <div class="header-container">
@@ -28,8 +27,10 @@
       <i class='bx bx-menu' id="menu-icon"></i>
       <nav class="navbar">
         <a href="home.html" class="nav-link" data-aos="fade-right">Home</a>
-     <!--   <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>-->
-        <a href="hub.html" class="nav-link" data-aos="fade-right">Hub</a>
+        <a href="tip.html" class="nav-link" data-aos="fade-right">TIP</a>
+        <a href="corp.html" class="nav-link" data-aos="fade-right">Corp Governance</a>
+        <a href="docs.html" class="nav-link" data-aos="fade-right">Controlled Docs</a>
+        <a href="terminal.html" class="nav-link" data-aos="fade-right">Terminal Guidelines</a>
         <!--<a href="rprts.html" class="nav-link" data-aos="fade-right">Reports</a>>-->
          <!--  <a href="abt.html" class="nav-link" data-aos="fade-right">About Us</a>-->
       </nav>
@@ -37,117 +38,298 @@
   </div>
 </header>
 
-<!-- TIP Section -->
-<section class="home" id="home">
-  <div class="home-content" data-aos="fade-up">
-    <p>
-      The Tangent Interdepartmental Portfolio is here to serve as a high-level “road map” to Tangent management systems and to consolidate the key business processes and systems.
-    </p>
-    <div style="text-align: left; margin-top: 20px; margin-bottom: 20px; margin-left: 20px;">
-      <a href="https://drive.google.com/file/d/1GprohKz1vGg0y9FMBj7oVehBauuCjjNi/view" class="btn" target="_blank">See TIP PDF</a>
+  <!-- ...existing code above... -->
+<div class="content-container">
+  <section class="document-categories" id="categories">
+    <h2>Tangent Interdepartmental Portfolio</h2>
+    <div class="search-box-container">
+      <input type="text" class="search-box" placeholder="Search for documents..." id="search-box" oninput="searchDocuments()" aria-label="Search for documents">
+      <button class="search-btn" onclick="searchDocuments()">Search</button>
     </div>
-  </div>
-</section>
- <div class="content-container">
-  <div class="overview" data-aos="fade-up">
-    <h2 class="heading" data-aos="fade-up"><span>Overview</span></h2>
-    <p data-aos="fade-up" data-aos-delay="50">
-      The Tangent Interdepartmental Portfolio (TIP) document is prepared by <strong>Corporate Communications, Internal Audit, Risk Management, and Compliance Office (CCIARCO)</strong> as part of an effort to develop documentation of business processes and internal controls that support continuous improvement.
-    </p>
-    <p data-aos="fade-up" data-aos-delay="100">The following are benefits of having effective documentation:</p>
-    <ul data-aos="fade-up" data-aos-delay="150">
-        <li>(a) Ability to maintain and improve system implementation with clear and easy-to-follow procedures;</li>
-        <li>(b) Know where to find procedures and records accordingly;</li>
-        <li>(c) Increased transparency and accountability of roles and responsibilities;</li>
-        <li>(d) Quality improvement and systematization across all management systems.</li>
-    </ul>
+<!-- Department Category Buttons -->
 
-    <!-- Reputation Section with Logo -->
-    <div class="reputation-container" data-aos="fade-up" data-aos-delay="200">
-      <div class="logo-container">
-          <img src="../images/CCIARCO.png" alt="CCIARCO Logo" class="logo">
-      </div>
-      <div class="text-container">
-          <h3 data-aos="fade-up" data-aos-delay="250">Reputation that’s Built Inside–Out</h3>
-          <p data-aos="fade-up" data-aos-delay="300">
-              Our goal is to cultivate a culture of trustworthiness and ethical conduct that naturally leads to a positive reputation.
-          </p>
-          <ul data-aos="fade-up" data-aos-delay="350">
-              <li>Delivering quality products and services;</li>
-              <li>Addressing underlying issues and practices; and</li>
-              <li>Consistently demonstrating trustworthiness and ethical conduct internally.</li>
-          </ul>
-      </div>
-    </div>
-
-    <h3 data-aos="fade-up" data-aos-delay="400">Accountability–Based Governance</h3>
-    <p data-aos="fade-up" data-aos-delay="450">
-        Our goal is to ensure that everyone takes responsibility for what they do, helping the business run smoothly and building trust with customers and partners.
-    </p>
-    <ul data-aos="fade-up" data-aos-delay="500">
-        <li>Ensuring systems and processes are in place;</li>
-        <li>Defining roles and responsibilities;</li>
-        <li>Monitoring adherence to policies, processes, and procedures;</li>
-        <li>Reviewing and reporting performance;</li>
-        <li>Emphasizing accountability; and</li>
-        <li>Driving overall effectiveness and integrity within the organization.</li>
-    </ul>
-
-    <h3 data-aos="fade-up" data-aos-delay="550">Objective Assurance to Business Value</h3>
-    <p data-aos="fade-up" data-aos-delay="600">
-        Our goal is to provide unbiased feedback to ensure we are doing things right and adding value to the business.
-    </p>
-    <ul data-aos="fade-up" data-aos-delay="650">
-        <li>Conducting independent evaluations and assessments to ensure systems and practices are aligned with business goals.</li>
-    </ul>
-
-    <h3 data-aos="fade-up" data-aos-delay="700">CCIARCO is taking care of You!</h3>
-    <blockquote data-aos="fade-up" data-aos-delay="750">
-        <strong> By focusing on the key areas that help the business succeed by:</strong><br>
-    </blockquote>
-    <ul data-aos="fade-up" data-aos-delay="800">
-        <li>Keeping customers happy</li>
-        <li>Making good products and services</li>
-        <li>Taking care of employees</li>
-        <li>Managing money wisely</li>
-    </ul>
-  </div>
+<div class="categories-container">
+      <button class="category" onclick="showDocuments('CCIARCO', this)" data-category="CCIARCO">CCIARCO</button>
+      <button class="category" onclick="showDocuments('SMD', this)" data-category="SMD">SMD</button>
+      <button class="category" onclick="showDocuments('PTSS', this)" data-category="PTSS">PTSS</button>
+      <button class="category" onclick="showDocuments('FTS', this)" data-category="FTS">FTS</button>
+      <button class="category" onclick="showDocuments('PMO', this)" data-category="PMO">PMO</button>
+      <button class="category" onclick="showDocuments('PTSD', this)" data-category="PTSD">PTSD</button>
+      <button class="category" onclick="showDocuments('GAPD', this)" data-category="GAPD">GAPD</button>
+      <button class="category" onclick="showDocuments('FAD', this)" data-category="FAD">FAD</button>
+      <button class="category" onclick="showDocuments('HCMD', this)" data-category="HCMD">HCMD</button>
 </div>
-<!-- Tangent Background Section -->
-<section class="tanbg" id="tanbg">
-  <h2 class="heading" data-aos="fade-down"><span>Tangent </span>Background</h2>
-  <p data-aos="fade-up">
-    Tangent Solutions, Inc. also called as Tangent, is an electronic payment service provider for acquiring
-    banks in the Philippines. Tangent provides card present transactions processing payment gateway for
-    card present transactions using EDC machines. We also provide payment gateway which routes the
-    transactions to the acquiring banks.
-    Tangent also provides merchants with POS devices to allow the merchants to accept payments using
-    credit and/or debit card.
-  </p>
-</section>
-
-<!-- Tangent Organizational Structure Section -->
-<section class="tanos" id="tanos">
-  <h2 class="heading" data-aos="fade-down"><span>Tangent Organizational Structure</span></h2>
-  <div class="structure-image" data-aos="fade-up">
-    <!-- Added id for image click trigger -->
-    <img src="../images/to1.png" alt="Tangent Organizational Structure" id="zoomTrigger">
-  </div>
-</section>
-
-<!-- Updated Modal for zoomable image with zoom controls placed under the image -->
-<div id="imageModal" class="modal">
-  <span class="close" id="modalClose">&times;</span>
-  <img class="modal-content" id="modalImage">
-  <div class="modal-controls">
-    <button id="zoomOut">-</button>
-    <button id="resetZoom"><i class='bx bx-search'></i></button>
-    <button id="zoomIn">+</button>
-  </div>
-</div>
-</section>
-
+    
+<div class="document-grid" id="CCIARCO">
+  <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+          <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1BMqcvxgpYBdHisdJ7Dh-ZwZzng3Y_4dY/view?usp=drive_link" target="_blank">CCIARCO Profile</a></div>
+      </div>
   
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+           <div class="document-item" data-tooltip="QOs Document 1"><a href="https://drive.google.com/file/d/1bRmh2fnLlZHlrXzmIcC5Z6z1rln0pkXn/view" target="_blank">CCIARCO Quality Objectives</a></div>
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 19"><a href="https://drive.google.com/file/d/1h9FCPG0bnGRYQ892EY8UZBT_ChuxQ5Ts/view" target="_blank">FQI on Regular and Super Banking</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 20"><a href="https://drive.google.com/file/d/1pvkpeGcSKTl66ITQy0oDrPmbEm6MVq3j/view" target="_blank">FQI on RPG with Onsite FT [using OneSFD and Viber]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 21"><a href="https://drive.google.com/file/d/1A0uGZ8c7bb3VoYQMtgvRINqeVAHV6aMP/view" target="_blank">Tangent Service Fulfillment Cycle</a></div>
+         </div>
+</div>
+
+
+<div class="document-grid" id="SMD">
+  <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+           <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1gQi_d4A6OycMA87lY-vofXqV_0zxg4Gd/view?usp=drive_link" target="_blank">SMD Profile</a></div>
+  
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+            <div class="document-item" data-tooltip="QOs Document 2"><a href="https://drive.google.com/file/d/16MFH7rsI8W-gHs7YHwN0KH0mTuYDrrr-/view" target="_blank">SMD Quality Objectives</a></div>
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 22"><a href="https://drive.google.com/file/d/1sdYxUhw6GjLKfdek1Z7QoWdZkCThtBmY/view" target="_blank">SRN Creation for Installation from Clients</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 23"><a href="https://drive.google.com/file/d/1oqAQ0hyKI-1ZWbDq_ZzMr4x-fdM3CWR6/view" target="_blank">SRN Creation from Merchants</a></div>
+         </div>
+</div>
+
+
+<div class="document-grid" id="PTSS">
+  <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+       <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1s9iEtjXeuxGBcJ9leebMt46gtBrwhs1P/view?usp=drive_link" target="_blank">PTSS Profile</a></div>
+  
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+                  <div class="document-item" data-tooltip="QOs Document 3"><a href="https://drive.google.com/file/d/1adaF0ClD-5wK6kOnGxSBbEHwvCFqEDDL/views" target="_blank">PTSS Quality Objectives</a></div>
+          
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 24"><a href="https://drive.google.com/file/d/1TCOv4GnfviyVGoGAgAChzl3j0h4pJXJ2/view" target="_blank">Releasing Operations</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 25"><a href="https://drive.google.com/file/d/17puDN7X8aJY2nOpsaujtbxahmzs4pLvo/view" target="_blank">Inventory for Newly Acquired POS Terminals</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 26"><a href="https://drive.google.com/file/d/17NaCmuLx485QEsjaaXck1eKzvNHudopG/view" target="_blank">Inventory from Pullout Services</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 36"><a href="https://drive.google.com/file/d/1vBFR_HfwNga5F7VQcjqxxaq0yEf05Gxi/view" target="_blank">POS Terminal Key Injection</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 37"><a href="https://drive.google.com/file/d/1Z4II1bGQa9PQC-ZoAaeA8T4_xOSjdM93/view" target="_blank">POS Terminal Preparation [GPI Account]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 38"><a href="https://drive.google.com/file/d/18h-bzIZUtMOZE2wbC6gFLGas2eSXyjX3/view" target="_blank">POS Terminal Preparation [Maya Account]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 39"><a href="https://drive.google.com/file/d/1oybV3OaElm2roAgcioFXzIlhf3DzXQ8W/view" target="_blank">POS Terminal Preparation [Other Accounts]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 40"><a href="https://drive.google.com/file/d/1tVISM8bSgycgLSwfviYiJShKHiP8wMsQ/view" target="_blank">POS Terminal Preparation [RPG for GPI Account]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 46"><a href="https://drive.google.com/file/d/1-UV76eddIO5Kl6veJ8KfWp-hz1In7THI/view" target="_blank">Maya Kitting</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 47"><a href="https://drive.google.com/file/d/1CC6t00G2-S7D-uqw2dwbgtYhSxN_cvNm/view" target="_blank">Outbound Logistics</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 58"><a href="https://drive.google.com/file/d/1lGjtCvNg5TjbzDzgRSnKxHK1aGXgTXm9/view" target="_blank">PTSS Replenishment</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 59"><a href="https://drive.google.com/file/d/1Chg_R_4-6khqDgsVSowI8dbJtwcbd9Gj/view" target="_blank">PTSS Warehousing</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 60"><a href="https://drive.google.com/file/d/1IWHfpr52uUIbdfW5gW7HHAvTiBaCX5Fw/view" target="_blank">Stock Tracking</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 61"><a href="https://drive.google.com/file/d/1Mv3BmjidmllJtbXM7eDmUPAKFib2e496/view" target="_blank">POS Repair</a></div>
+         </div>
+</div>
+
+<div class="document-grid" id="FTS">
+    <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+        <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1pOM_QxWX17RXTGgZGrfa9TrG8pKXUgtn/view?usp=drive_link" target="_blank">FTS Profile</a></div>
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+        <div class="document-item" data-tooltip="QOs Document 4"><a href="" target="_blank">FTS Quality Objectives</a></div>
+          
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 27"><a href="https://drive.google.com/file/d/1J_WXtL0A-9u3wYiur9jR2wBJVOYJNVh8/view" target="_blank">FT Allowance Replenishment</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 28"><a href="https://drive.google.com/file/d/1GTUAICTVGsL0992PGxjD8bPGUUw2lppb/view" target="_blank">POS Terminal Pullout</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 29"><a href="https://drive.google.com/file/d/1Wv111NGPbw5ME0YUVC4z3lK9hLPCuQk1/view" target="_blank">POS Terminal Replacement</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 30"><a href="https://drive.google.com/file/d/1Ngilwj6Up6LrNq8RFTcCumgAQyp_Ok58/view" target="_blank">Maya Spare Terminals On-Hand</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 31"><a href="https://drive.google.com/file/d/1_glQYeZkgPXp-j_15VQuZ7wOFPhUXROf/view" target="_blank">POS Terminal Deployment</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 32"><a href="https://drive.google.com/file/d/1nn5he0gOYj4GD3CCd7Lp9OjwDzx36e-t/view" target="_blank">POS Terminal Dispatch to Manila</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 33"><a href="https://drive.google.com/file/d/17tkp-92-WbDkCZ68gFYzAvu4ce5gKZDF/view" target="_blank">POS Terminal Dispatch to Provinces</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 34"><a href="https://drive.google.com/file/d/1UQm_rgZngrEXk7EE4dV5gMCiRVxd4Wm6/view" target="_blank">POS Terminal Installation</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 35"><a href="https://drive.google.com/file/d/1BKLwQU6aEyBexIp2ybT17TsMolBbrKLS/view" target="_blank">Receiving of FSR and Assets</a></div>
+        </div>
+</div>
+
+
+<div class="document-grid" id="PMO">
+    <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+                <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1wp98PUGcK68qOlOC7JrEUY8AJvzn5be_/view?usp=drive_link" target="_blank">PMO Profile</a></div>
+          
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+                  <div class="document-item" data-tooltip="QOs Document 5"><a href="https://drive.google.com/file/d/1azsl4PltwQGz6IywdIlRTmo-aCuQzCxL/view" target="_blank">PMO Quality Objectives</a></div>
+          
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+
+         </div>
+</div>
+
+<div class="document-grid" id="PTSD">
+    <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+           <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1Ix735qKfU7bC1aA1FfGimpB1LG8c2MPP/view?usp=drive_link" target="_blank">PTSD Profile</a></div>
+          
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+          <div class="document-item" data-tooltip="QOs Document 6"><a href="https://drive.google.com/file/d/1F7-oSEH5bCvHFaEXalq39UkJjecraV5X/view" target="_blank">AppDev & SQA Quality Objectives</a></div>
+          <div class="document-item" data-tooltip="QOs Document 7"><a href="https://drive.google.com/file/d/1qW0XumIV9PFafedfZWNDk5RHhrHQq8ge/view" target="_blank">NetSys Quality Objectives</a></div>
+          <div class="document-item" data-tooltip="QOs Document 8"><a href="https://drive.google.com/file/d/1iTZQ_pa93ERcNGPwVaoH0YImHmliw5su/view" target="_blank">TSS Quality Objectives</a></div>
+      </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 41"><a href="https://drive.google.com/file/d/11SjjHjrEjQn6UGVM7hoyDGFdD2fSBDB-/view" target="_blank">PTSD Helpdesk [Internal]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 42"><a href="https://drive.google.com/file/d/1T7zHjr3aPvkaogg_dM08p6vd4FWXdrhS/view" target="_blank">HSM and PIN Management</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 43"><a href="https://drive.google.com/file/d/1IlrzHY6PaElJjjbjtWwdwHnhxw8_KWXb/view" target="_blank">Key Ceremony Authorization and Loading Sessions</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 44"><a href="https://drive.google.com/file/d/1YSF490s-APLzVOj9RmwHKcLdfRi0z7Yu/view" target="_blank">Development of New Application</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 45"><a href="https://drive.google.com/file/d/1FGhjLQGn_NOanceTDKx4_uoWXDv801Lo/view" target="_blank">Deployment of New Application</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 50"><a href="https://drive.google.com/file/d/1Ao4oHtJsJB4_OAFikbBCTj13wudqbBtz/view" target="_blank">Software Quality Assurance</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 51"><a href="https://drive.google.com/file/d/1JfrfAutor8cZeECn4IQIe0xRwlZ76PEh/view" target="_blank">Network Operation - Production Monitoring</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 52"><a href="https://drive.google.com/file/d/11oleS1PsySYgbmCelXE1nF0tj4ea2XC7/view" target="_blank">System Operation - Production Monitoring</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 53"><a href="https://drive.google.com/file/d/1SkQIIqFYL1grJQdLBkos3wK_Vab_68qG/view" target="_blank">Default Parameters on Maxstore and ICG</a></div>
+         </div>
+</div>
+
+<div class="document-grid" id="GAPD">
+  <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+          <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1mKb6tJmjvkkxTHZEgnkWVFE6gf8u_Mpe/view?usp=drive_link" target="_blank">GAPD Profile</a></div>
+          
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+          <div class="document-item" data-tooltip="QOs Document 9"><a href="https://drive.google.com/file/d/1QGSk2_HB86hWJmK35Vyr7W35VBycWKtz/view" target="_blank">GAPD Quality Objectives</a></div>
+       </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 1"><a href="https://drive.google.com/file/d/1KLm0LdG_fnbg2NOJo9VEEliUoy8-S47l/view" target="_blank">Asset Disposal</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 2"><a href="https://drive.google.com/file/d/1xyJGEt4VyQWlFWL9OFphUwO70Swzt99Q/view" target="_blank">General Purchasing</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 3"><a href="https://drive.google.com/file/d/1UNQ_a--L4Znp2dia1daYA_9eHW2HOLfk/view" target="_blank">Property Tagging</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 4"><a href="https://drive.google.com/file/d/1NCZsRC1MVNb8UAiqESUkf4MfgbEVKiQc/view" target="_blank">Importation</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 48"><a href="https://drive.google.com/file/d/1VkKGgEDRSRaPWHPFTcoXnzOCPQ72MYJI/view" target="_blank">Deletion of Biometrics [upon Resignation]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 49"><a href="https://drive.google.com/file/d/1DOqt0rpeiFLgw3eWam11AReyRlkjnWD6/view" target="_blank">Enrollment of Biometrics [upon Onboading]</a></div>
+          </div>
+</div>
+
+
+<div class="document-grid" id="FAD">
+    <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+         <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1j0mOuOGAMY7a5GmgI8_LQKNe5T_MLWoE/view?usp=drive_link" target="_blank">FAD Profile</a></div>
+       
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+           <div class="document-item" data-tooltip="QOs Document 10"><a href="https://drive.google.com/file/d/1DnYk2rR-OvXsluzC3qIIUJanAm-vWNdo/view" target="_blank">FAD Quality Objectives</a></div>
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 5"><a href="https://drive.google.com/file/d/160QEjYcbYRGac9k_yzfYxScWrW-MTpVJ/view" target="_blank">Billing [Corporate Accounts]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 6"><a href="https://drive.google.com/file/d/1EJOiOWE0JZvR0MCi6jwkZMRB0kAaRZ6u/view" target="_blank">Collection [Corporate Accounts]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 7"><a href="https://drive.google.com/file/d/12stDg4-mst91yYVU4_MfxMKV50SP-kqN/view" target="_blank">Disbursement [External/Suppliers]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 8"><a href="https://drive.google.com/file/d/1dlCFX8-5m4pKpTQpc21uFTpgiD4tRW4T/view" target="_blank">Disbursement [Internal/Office-Based Employees]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 9"><a href="https://drive.google.com/file/d/1ABylRkcASi3IQ-MRceroFbflDDm8R3Nd/view" target="_blank">SME Billing [Servicing]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 10"><a href="https://drive.google.com/file/d/1lWMmlWFiAiimdRAyHEs_f9yYhT7kUaVl/view" target="_blank">SME Billing [Terminal Rental]</a></div>
+          <div class="document-item" data-tooltip="PROCESS FLOW Document 11"><a href="https://drive.google.com/file/d/1b0V4s8NBMpvx54uo3lWGJjF8xg3Taj2i/view" target="_blank">SME Collection</a></div>
+           </div>
+</div>
+
+<div class="document-grid" id="HCMD">
+  <button class="show-all-btn" onclick="toggleAllDocuments(this)">
+       <i class='bx bx-show'></i> Show All
+       </button>
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">Department Profile</h3>
+          <div class="document-item" data-tooltip="Profile Document 1"><a href="https://drive.google.com/file/d/1QDcll8yC7PWeygFDmtvM063CB79BFRtY/view?usp=drive_link" target="_blank">HCMD Profile</a></div>
+       
+      </div>
+  
+      <div class="department-section">
+        <h3 onclick="departmentAction(this)">QOs & KPIs</h3>
+                  <div class="document-item" data-tooltip="QOs Document 11"><a href="https://drive.google.com/file/d/1qW0XumIV9PFafedfZWNDk5RHhrHQq8ge/view" target="_blank">HCMD Quality Objectives</a></div>
+          
+        </div>
+  
+        <div class="department-section">
+          <h3 onclick="departmentAction(this)">Process Flows</h3>
+           <div class="document-item" data-tooltip="PROCESS FLOW Document 12"><a href="https://drive.google.com/file/d/1TYMtBFlrYC8OKnmUOUX6JdUGDocov6K1/view" target="_blank">Employee Offboarding</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 13"><a href="https://drive.google.com/file/d/10iqfK0ftCpdccrl74_DvVOCLkizXcfIN/view" target="_blank">Final Pay Processing</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 14"><a href="https://drive.google.com/file/d/1zGxG4m3qrtwmlCHLdlF3OFjQo8B6_eHJ/view" target="_blank">Handling Disciplinary Action</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 15"><a href="https://drive.google.com/file/d/1G3ouSj9rDcqE1bLv9lG_I0BztsQRR8In/view" target="_blank">Onboarding</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 16"><a href="https://drive.google.com/file/d/1RPTzhtiZBqXKe0paDyRl5J66wO7R9fQK/view" target="_blank">Payroll Administration</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 17"><a href="https://drive.google.com/file/d/1hrwTVM8U0z-4W_Fp-xlip8Ik2GQuCzKt/view" target="_blank">Recruitment and Selection</a></div>
+            <div class="document-item" data-tooltip="PROCESS FLOW Document 18"><a href="https://drive.google.com/file/d/1PtpTRItvR6BLGPsVJAfsOIKm3j4J_Yqj/view" target="_blank">Training Needs</a></div>
+          </div>
+      </div>
+
+  <p id="disclaimer-box" style="max-width:700px;margin:32px auto 0 auto;padding:16px 24px 56px 24px;background:#fffbe7;border-left:6px solid #ffc107;color:#333;font-size:1.08em;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:6px; position:relative; text-align:left;">
+        <strong style="font-size:1.5em;display:block;text-align:center;margin-bottom:8px;">Disclaimer</strong>
+        <strong>Document Use Notice:</strong> 
+        All documents in this portal are confidential. They must not be copied, reproduced, or shared without prior approval from CCIARCO—except for designated forms, which may be downloaded for your use. Unauthorized distribution may result in disciplinary or legal action.
+        <br>
+        <strong>Access Control:</strong><br>
+        Accessibility is role-based and on a need-to-know basis. You may request access for specific documents if necessary. To do this, you may email 
+        <a href="mailto:cciarco-core@tangentsolutionsinc.com" style="color:#d35400;font-weight:bold;text-decoration:underline;">cciarco-core@tangentsolutionsinc.com</a>
+        with the requestor’s name, position, email, and reason.
+        <button onclick="document.getElementById('disclaimer-box').style.display='none';"
+          style="position:absolute;bottom:18px;right:24px;padding:6px 24px;border:none;border-radius:5px;background:#ffc107;color:#333;font-weight:bold;cursor:pointer;">
+          OK
+        </button>
+      </p>
+  </section>
+</div>
+<!-- ...existing code below... -->
+<footer class="footer">
+  <div class="footer-text">
+    <p>&copy; 2025 Tangent Solutions Inc. | All Rights Reserved.</p>
+  </div>
+</footer>
+
+
 <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -157,87 +339,199 @@
     easing: 'ease-in-out',
   });
 </script>
-<script src="../js/script.js"></script>
-
-<!-- Add modal JS at the end of the body -->
+<script src="js/script.js"></script>
 <script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const zoomTrigger = document.getElementById("zoomTrigger");
-  const modalClose = document.getElementById("modalClose");
-  const zoomInBtn = document.getElementById("zoomIn");
-  const zoomOutBtn = document.getElementById("zoomOut");
-  const resetZoomBtn = document.getElementById("resetZoom");
-  const defaultZoom = 1.2;
-  let currentScale = defaultZoom;
-  let offsetX = 0, offsetY = 0;
-  let isPanning = false, startX = 0, startY = 0;
+  function showDocuments(categoryId, element) {
+    const allGrids = document.querySelectorAll('.document-grid');
+    allGrids.forEach(grid => grid.style.display = 'none');
 
-  zoomTrigger.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    currentScale = defaultZoom;
-    offsetX = 0; offsetY = 0;
-    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
-  }
-  
-  modalClose.onclick = function() {
-    modal.style.display = "none";
-    currentScale = defaultZoom;
-    offsetX = 0; offsetY = 0;
-    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
-  }
-  
-  zoomInBtn.onclick = function() {
-    currentScale += 0.1;
-    modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
-  }
-  
-  zoomOutBtn.onclick = function() {
-    currentScale = Math.max(0.1, currentScale - 0.1);
-    modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
-  }
-  
-  resetZoomBtn.onclick = function() {
-    currentScale = defaultZoom;
-    offsetX = 0; offsetY = 0;
-    modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
-  }
-  
-  // Panning for TIP modal
-  modalImg.addEventListener("mousedown", function(e) {
-    isPanning = true;
-    startX = e.clientX - offsetX;
-    startY = e.clientY - offsetY;
-    e.preventDefault();
-  });
-  window.addEventListener("mousemove", function(e) {
-    if (isPanning) {
-      offsetX = e.clientX - startX;
-      offsetY = e.clientY - startY;
-      modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+    const categoryGrid = document.getElementById(categoryId);
+    if (!categoryGrid) {
+      console.error(`Category ID "${categoryId}" not found.`);
+      return;
     }
-  });
-  window.addEventListener("mouseup", function() {
-    isPanning = false;
+    categoryGrid.style.display = 'grid';
+
+    const allCategories = document.querySelectorAll('.category');
+    allCategories.forEach(category => category.classList.remove('active'));
+
+    element.classList.add('active');
+  }
+
+  function searchDocuments() {
+    const keyword = document.getElementById('search-box').value.toLowerCase();
+    const allDocuments = document.querySelectorAll('.document-item');
+    let matchedCategory = null;
+
+    allDocuments.forEach(doc => {
+      const text = doc.textContent.toLowerCase();
+      if (text.includes(keyword)) {
+        doc.style.display = 'block';
+        matchedCategory = doc.closest('.document-grid').id;
+      } else {
+        doc.style.display = 'none';
+      }
+    });
+
+    if (matchedCategory) {
+      const matchedCategoryElement = document.querySelector(`.category[data-category="${matchedCategory}"]`);
+      showDocuments(matchedCategory, matchedCategoryElement);
+    }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const items = document.querySelectorAll('.document-item');
+    items.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Ensure clicking the item triggers the link
+        const link = this.querySelector('a');
+        if(link) {
+          window.open(link.href, link.target || '_self');
+        }
+      });
+    });
   });
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-      currentScale = defaultZoom;
-      offsetX = 0; offsetY = 0;
-      modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+  // Updated function: using computed style for a one-click toggle
+  function departmentAction(header) {
+    console.log("Department " + header.textContent.trim() + " clicked");
+    const container = header.parentElement;
+    const items = container.querySelectorAll('.document-item');
+    items.forEach(item => {
+      const computedDisplay = window.getComputedStyle(item).display;
+      item.style.display = (computedDisplay === 'none') ? 'block' : 'none';
+    });
+  }
+
+  function toggleAllForms() {
+      const formsGrid = document.getElementById('forms');
+      const items = formsGrid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          // Hide all items
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          // Show all items
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          document.querySelector('#forms .show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+
+  // New function for processFlow, similar to toggleAllForms
+  function toggleAllProcessFlow() {
+    const grid = document.getElementById('processFlow');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
     }
   }
-  
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-      modal.style.display = "none";
-      currentScale = defaultZoom;
-      offsetX = 0; offsetY = 0;
-      modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`;
+
+  function toggleAllTRA() {
+    const grid = document.getElementById('TRA');
+    const items = grid.querySelectorAll('.document-item');
+    let allVisible = true;
+    items.forEach(item => {
+        if (window.getComputedStyle(item).display === 'none') {
+            allVisible = false;
+        }
+    });
+    if (allVisible) {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+    } else {
+        items.forEach(item => {
+            item.style.display = 'block';
+        });
+        grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
     }
+  }
+
+  function toggleAllPolicies() {
+      const grid = document.getElementById('policies');
+      const items = grid.querySelectorAll('.document-item');
+      let allVisible = true;
+      items.forEach(item => {
+          if (window.getComputedStyle(item).display === 'none') {
+              allVisible = false;
+          }
+      });
+      if (allVisible) {
+          items.forEach(item => {
+              item.style.display = 'none';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-show'></i> Show All";
+      } else {
+          items.forEach(item => {
+              item.style.display = 'block';
+          });
+          grid.querySelector('.show-all-btn').innerHTML = "<i class='bx bx-hide'></i> Hide All";
+      }
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      const processBtn = document.querySelector('.category[data-category="processFlow"]');
+      if(processBtn){
+          showDocuments('processFlow', processBtn);
+      }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+    if(menuIcon && navbar) {
+      menuIcon.addEventListener("click", function(){
+        navbar.classList.toggle("active");
+      });
+    }
+  });
+</script>
+<script>
+  // Hide all document grids and remove active state from categories on load
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.document-grid').forEach(grid => {
+      grid.style.display = 'none';
+    });
+    document.querySelectorAll('.category').forEach(btn => btn.classList.remove('active'));
+
+    // Highlight Corp Governance nav link
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    navLinks.forEach(link => {
+      if (link.textContent.trim() === "TIP") {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   });
 </script>
 
@@ -267,7 +561,51 @@
             window.location.href = "../index.html";
         }
     });
-</script> 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Show disclaimer only if not acknowledged this session
+  if(sessionStorage.getItem('disclaimerAccepted')) {
+    document.getElementById('disclaimer-box').style.display = 'none';
+  } else {
+    document.getElementById('disclaimer-box').style.display = 'block';
+  }
 
+  // Hide disclaimer and set session flag when OK is clicked
+  const okBtn = document.querySelector('#disclaimer-box button');
+  if(okBtn) {
+    okBtn.addEventListener('click', function() {
+      sessionStorage.setItem('disclaimerAccepted', 'yes');
+      document.getElementById('disclaimer-box').style.display = 'none';
+    });
+  }
+});
+</script>
+
+<script>
+function toggleAllDocuments(btn) {
+  // Find the currently visible document grid (display: grid)
+  const grid = Array.from(document.querySelectorAll('.document-grid')).find(
+    g => window.getComputedStyle(g).display === 'grid'
+  );
+  if (!grid) return;
+
+  const items = grid.querySelectorAll('.document-item');
+  let allVisible = true;
+  items.forEach(item => {
+    if (window.getComputedStyle(item).display === 'none') {
+      allVisible = false;
+    }
+  });
+
+  if (allVisible) {
+    items.forEach(item => item.style.display = 'none');
+    btn.innerHTML = "<i class='bx bx-show'></i> Show All";
+  } else {
+    items.forEach(item => item.style.display = 'block');
+    btn.innerHTML = "<i class='bx bx-hide'></i> Hide All";
+  }
+}
+</script>
 </body>
 </html>
