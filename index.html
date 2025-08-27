@@ -121,44 +121,75 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" class="btn submit-btn">SUBMIT</button>
+          <p style="margin-top: 10px;">
+         <a href="#" id="forgot-password" style="color: #4FC3F7;">Forgot Password?</a>
+        </p>
             <p id="error-message"></p>
         </form>
     </div>
   <!-- Header Design --> 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
-            authDomain: "cciarco-portal.firebaseapp.com",
-            projectId: "cciarco-portal",
-            storageBucket: "cciarco-portal.firebasestorage.app",
-            messagingSenderId: "513140257536",
-            appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
-            measurementId: "G-0J0T2WDJJQ"
-        };
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
+        authDomain: "cciarco-portal.firebaseapp.com",
+        projectId: "cciarco-portal",
+        storageBucket: "cciarco-portal.firebasestorage.app",
+        messagingSenderId: "513140257536",
+        appId: "1:513140257536:web:e8b7a6cdd57284054ff9e5",
+        measurementId: "G-0J0T2WDJJQ"
+    };
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-        document.getElementById("login-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const email = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value;
-            const errorMessage = document.getElementById("error-message");
+    // 🔐 Login handler
+    document.getElementById("login-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("error-message");
 
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    console.log("Login successful!", userCredential.user);
-                    window.location.href = "html/home.html";
-                })
-                .catch((error) => {
-                    errorMessage.textContent = "Login failed: " + error.message;
-                    errorMessage.style.display = "block";
-                });
-        });
-    </script>
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log("Login successful!", userCredential.user);
+                window.location.href = "html/home.html";
+            })
+            .catch((error) => {
+                errorMessage.textContent = "Login failed: " + error.message;
+                errorMessage.style.display = "block";
+            });
+    });
+
+    // 🔄 Password reset handler
+    document.getElementById("forgot-password").addEventListener("click", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("username").value.trim();
+        const errorMessage = document.getElementById("error-message");
+
+        if (!email) {
+            errorMessage.textContent = "Please enter your email to reset password.";
+            errorMessage.style.display = "block";
+            return;
+        }
+
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                errorMessage.style.color = "green";
+                errorMessage.textContent = "Password reset email sent!";
+                errorMessage.style.display = "block";
+            })
+            .catch((error) => {
+                errorMessage.style.color = "red";
+                errorMessage.textContent = "Error: " + error.message;
+                errorMessage.style.display = "block";
+            });
+    });
+</script>
+
   <!-- Header Design --> 
 </body>
 </html>
+
