@@ -565,9 +565,16 @@ section.tanov{
 }
 
 /* Used in: compliance.html, abt.html */
-section.team,section.tanbg,section.tanos  {
+section.team, section.tanos  {
     padding: 10rem 9% 2rem;
     min-height: 80vh;
+    background: var(--bg-color);
+}
+
+/* Used in: compliance.html, abt.html */
+section.tanbg {
+    padding: 10rem 9% 2rem;
+    min-height: 70vh;
     background: var(--bg-color);
 }
 
@@ -2162,3 +2169,4 @@ main {
   font-size: 0.98em;
   margin-bottom: 10px;
 }
+
