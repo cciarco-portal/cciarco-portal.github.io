@@ -574,7 +574,7 @@ section.team, section.tanos  {
 /* Used in: compliance.html, abt.html */
 section.tanbg {
     padding: 10rem 9% 2rem;
-    min-height: 70vh;
+    min-height: 40vh;
     background: var(--bg-color);
 }
 
@@ -2169,4 +2169,5 @@ main {
   font-size: 0.98em;
   margin-bottom: 10px;
 }
+
 
