@@ -1,11 +1,6 @@
-const functions = require("firebase-functions");
-const express = require("express");
-const { google } = require("googleapis");
+// --- Copilot-style Chat Logic with Google Drive Integration ---
 
-const app = express();
-app.use(express.json());
-
-// Hardcoded Service Account JSON (⚠️ not secure for production)
+// Hardcoded Service Account JSON (⚠️ for testing only, not secure in public repos)
 const serviceAccount = {
   "type": "service_account",
   "project_id": "cciarco-portal",
@@ -20,36 +15,52 @@ const serviceAccount = {
   "universe_domain": "googleapis.com"
 };
 
-async function saveChatToDrive(userMessage, aiReply) {
-  const auth = new google.auth.GoogleAuth({
-    credentials: serviceAccount,
-    scopes: ["https://www.googleapis.com/auth/drive.file"]
-  });
+// Hardcoded Drive Folder ID
+const driveFolderId = "1osTGjmwNUU92FQX6NcRAh_svzjXSLxnt";
 
-  const drive = google.drive({ version: "v3", auth });
+// --- Chat UI Logic ---
+async function sendMessage() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim();
+  if (!message) return;
 
-  const fileMetadata = {
-    name: "chatlog.txt",
-    parents: ["1osTGjmwNUU92FQX6NcRAh_svzjXSLxnt"] // your Drive folder ID
-  };
+  appendMessage(message, "user");
 
-  const media = {
-    mimeType: "text/plain",
-    body: `${new Date().toISOString()}\nUser: ${userMessage}\nAI: ${aiReply}\n\n`
-  };
+  // Placeholder AI reply (later: connect to Copilot AI backend)
+  const aiReply = "AI response to: " + message;
+  appendMessage(aiReply, "ai");
 
-  await drive.files.create({
-    resource: fileMetadata,
-    media: media,
-    fields: "id"
-  });
+  input.value = "";
+
+  // Save to Google Drive
+  await saveChatToDrive(message, aiReply);
 }
 
-app.post("/chat", async (req, res) => {
-  const userMessage = req.body.message;
-  const aiReply = "AI response to: " + userMessage;
-  await saveChatToDrive(userMessage, aiReply);
-  res.json({ reply: aiReply });
-});
+// Append styled message bubbles
+function appendMessage(text, sender) {
+  const chatLog = document.getElementById("chatLog");
+  const bubble = document.createElement("div");
+  bubble.classList.add("message", sender);
+  bubble.textContent = text;
+  chatLog.appendChild(bubble);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
 
-exports.api = functions.https.onRequest(app);
+// --- Save Chat Logs into Google Drive ---
+async function saveChatToDrive(userMessage, aiReply) {
+  // ⚠️ Client-side JS cannot use service account JSON directly.
+  // Normally you'd need a backend server to handle auth securely.
+  // For demo purposes, this is a placeholder showing intent.
+
+  const fileContent = `${new Date().toISOString()}\nUser: ${userMessage}\nAI: ${aiReply}\n\n`;
+  const file = new Blob([fileContent], { type: "text/plain" });
+
+  const metadata = {
+    name: "chatlog.txt",
+    parents: [driveFolderId]
+  };
+
+  // This requires OAuth flow for client-side apps.
+  // Replace with gapi.auth2 logic if you want to run purely on GitHub Pages.
+  console.log("Pretend saving to Google Drive:", metadata, fileContent);
+}
