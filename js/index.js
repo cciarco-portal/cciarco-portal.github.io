@@ -1,39 +1,17 @@
-// --- Copilot-style Chat Logic with Google Drive Integration ---
+// --- Hardcoded Copilot-style AI Chat ---
 
-// Hardcoded Service Account JSON (⚠️ for testing only, not secure in public repos)
-const serviceAccount = {
-  "type": "service_account",
-  "project_id": "cciarco-portal",
-  "private_key_id": "5867a516bda12d84bd3d2daecc2e225f36098656",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAZcFnveS6nsWh\n...snip...\n-----END PRIVATE KEY-----\n",
-  "client_email": "drive-service-account@cciarco-portal.iam.gserviceaccount.com",
-  "client_id": "109628040063320630781",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/drive-service-account%40cciarco-portal.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-};
-
-// Hardcoded Drive Folder ID
-const driveFolderId = "1osTGjmwNUU92FQX6NcRAh_svzjXSLxnt";
-
-// --- Chat UI Logic ---
-async function sendMessage() {
+function sendMessage() {
   const input = document.getElementById("userInput");
   const message = input.value.trim();
   if (!message) return;
 
   appendMessage(message, "user");
 
-  // Placeholder AI reply (later: connect to Copilot AI backend)
-  const aiReply = "AI response to: " + message;
+  // Hardcoded AI logic
+  const aiReply = getAIResponse(message);
   appendMessage(aiReply, "ai");
 
   input.value = "";
-
-  // Save to Google Drive
-  await saveChatToDrive(message, aiReply);
 }
 
 // Append styled message bubbles
@@ -46,21 +24,20 @@ function appendMessage(text, sender) {
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
-// --- Save Chat Logs into Google Drive ---
-async function saveChatToDrive(userMessage, aiReply) {
-  // ⚠️ Client-side JS cannot use service account JSON directly.
-  // Normally you'd need a backend server to handle auth securely.
-  // For demo purposes, this is a placeholder showing intent.
+// --- Hardcoded AI responses ---
+function getAIResponse(userMessage) {
+  const lower = userMessage.toLowerCase();
 
-  const fileContent = `${new Date().toISOString()}\nUser: ${userMessage}\nAI: ${aiReply}\n\n`;
-  const file = new Blob([fileContent], { type: "text/plain" });
+  if (lower.includes("incident management")) {
+    return "Incident Management Policy: Critical incidents must be contained within 1 hour, high severity within 4 hours, medium within 24 hours, and low within 3 business days.";
+  }
+  if (lower.includes("rapid7")) {
+    return "Rapid7 logs are used as PCI DSS evidence for quarterly vulnerability scans (Req. 11.2) and annual penetration testing (Req. 11.3).";
+  }
+  if (lower.includes("disaster recovery")) {
+    return "Disaster Recovery Plan: Defines RTO/RPO targets, rollback planning, and alternate site activation.";
+  }
 
-  const metadata = {
-    name: "chatlog.txt",
-    parents: [driveFolderId]
-  };
-
-  // This requires OAuth flow for client-side apps.
-  // Replace with gapi.auth2 logic if you want to run purely on GitHub Pages.
-  console.log("Pretend saving to Google Drive:", metadata, fileContent);
+  // Default fallback
+  return "I don’t have a hardcoded answer for that yet. Please refine your question.";
 }
