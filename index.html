@@ -132,7 +132,7 @@ PCI DSS
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
         import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
-
+        import { setUserId, setUserProperties } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAkg7ZFnBfbU0LVxfiraknwpzVgAAOu-Lc",
@@ -158,8 +158,12 @@ PCI DSS
                 .then((userCredential) => {
                     console.log("Login successful!", userCredential.user);
 
-                logEvent(analytics, 'login', { 
-                    method: 'email', user_id: userCredential.user.uid 
+                setUserId(analytics, userCredential.user.uid);
+                    
+                setUserProperties(analytics, { email: userCredential.user.email });   
+                
+                logEvent(analytics, 'login', { method: 'email', user_id: userCredential.user.uid 
+                    
                 });
                     
                     window.location.href = "html/home.html";
@@ -180,6 +184,7 @@ PCI DSS
   <!-- Header Design --> 
 </body>
 </html>
+
 
 
 
