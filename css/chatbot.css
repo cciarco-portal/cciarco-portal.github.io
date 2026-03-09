@@ -1,0 +1,163 @@
+.chat-page {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.6rem;
+  padding: 9rem 3rem 2rem;
+  min-height: 100vh;
+}
+
+.setup-panel,
+.chat-panel {
+  background: #29303a;
+  border: 1px solid rgba(0, 238, 255, 0.25);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+
+.setup-panel h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.setup-panel p,
+.hint {
+  font-size: 1.3rem;
+  color: #ccd6e0;
+}
+
+.field-group {
+  margin-top: 1.2rem;
+}
+
+.field-group label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.field-group input {
+  width: 100%;
+  border: 1px solid #4b5a6f;
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #fff;
+  background: #1f242d;
+  font-size: 1.3rem;
+}
+
+.setup-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checkbox-row {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #0ef;
+  color: #1f242d;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: #445267;
+  color: #fff;
+}
+
+.drive-panel {
+  margin-top: 1.6rem;
+}
+
+.drive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drive-file-list {
+  margin-top: 1rem;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-left: 0;
+  list-style: none;
+}
+
+.drive-file-list li {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  max-width: 80%;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  margin-left: auto;
+  background: #0ef;
+  color: #1f242d;
+}
+
+.message.ai {
+  background: #3a4657;
+  color: #fff;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+#userInput {
+  flex: 1;
+  border: 1px solid #4b5a6f;
+  background: #1f242d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 900px) {
+  .chat-page {
+    grid-template-columns: 1fr;
+    padding: 8rem 1.2rem 1.2rem;
+  }
+}
