@@ -30,12 +30,17 @@ connectDriveBtn.addEventListener('click', async () => {
       return;
     }
 
+    if (!looksLikeGoogleClientId(clientId)) {
+      appendMessage('AI', 'Google OAuth Client ID looks invalid. Use the Web Client ID from Google Cloud (format: ...apps.googleusercontent.com), not your email address.');
+      return;
+    }
+
     tokenClient = google.accounts.oauth2.initTokenClient({
       client_id: clientId,
       scope: 'https://www.googleapis.com/auth/drive.readonly',
       callback: async (response) => {
         if (response.error) {
-          appendMessage('AI', `Drive connection failed: ${response.error}`);
+          appendMessage('AI', `Drive connection failed: ${friendlyDriveError(response.error)}`);
           return;
         }
 
@@ -70,6 +75,11 @@ chatForm.addEventListener('submit', async (event) => {
 
   if (!apiKey) {
     appendMessage('AI', 'Please enter your Gemini API key first.');
+    return;
+  }
+
+  if (!looksLikeGeminiApiKey(apiKey)) {
+    appendMessage('AI', 'Gemini API key format looks invalid. It should typically start with "AIza".');
     return;
   }
 
@@ -271,8 +281,15 @@ async function askGemini({ apiKey, question, driveContext, pdfParts }) {
   });
 
   if (!response.ok) {
-    const errorPayload = await response.text();
-    throw new Error(`Gemini API error: ${response.status} ${errorPayload}`);
+    let errorPayload = null;
+    try {
+      errorPayload = await response.json();
+    } catch (_) {
+      errorPayload = null;
+    }
+
+    const friendly = friendlyGeminiError(response.status, errorPayload);
+    throw new Error(friendly);
   }
 
   const data = await response.json();
@@ -302,4 +319,42 @@ function friendlyMime(mimeType) {
   if (mimeType === 'text/plain') return 'TXT';
   if (mimeType === 'text/markdown') return 'Markdown';
   return mimeType;
+}
+
+function looksLikeGoogleClientId(value) {
+  return /\.apps\.googleusercontent\.com$/.test(value);
+}
+
+function looksLikeGeminiApiKey(value) {
+  return /^AIza[\w-]{10,}$/.test(value);
+}
+
+function friendlyDriveError(errorCode) {
+  if (errorCode === 'popup_closed_by_user') {
+    return 'The sign-in popup was closed before completion.';
+  }
+
+  if (errorCode === 'access_denied') {
+    return 'Drive access was denied. Please allow Drive read access.';
+  }
+
+  return `${errorCode}. Verify your OAuth client ID and allowed origins in Google Cloud.`;
+}
+
+function friendlyGeminiError(status, payload) {
+  const message = payload?.error?.message || '';
+
+  if (status === 400 && /API key not valid/i.test(message)) {
+    return 'Gemini API key is invalid. Use a valid key from Google AI Studio.';
+  }
+
+  if (status === 403) {
+    return 'Gemini request was forbidden. Check API key restrictions and ensure the Generative Language API is enabled.';
+  }
+
+  if (status === 429) {
+    return 'Rate limit reached. Please wait a moment and retry.';
+  }
+
+  return `Gemini request failed (${status}). ${message || 'Please verify API setup and try again.'}`;
 }
