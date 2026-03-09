@@ -33,6 +33,8 @@ let lastSystemMessage = '';
 let lastSystemMessageAt = 0;
 const SYSTEM_MESSAGE_COOLDOWN_MS = 4000;
 const RETRY_DELAYS_MS = [1200, 2500];
+const DRIVE_CONNECTED_COOKIE = 'cciarco_drive_connected';
+const DRIVE_CLIENT_COOKIE = 'cciarco_drive_client_id';
 
 appendMessage('AI', 'Ready. Select a provider, then ask a question.');
 
@@ -44,6 +46,7 @@ if (!googleClientIdInput.value) {
   googleClientIdInput.value = DEFAULT_GOOGLE_CLIENT_ID;
 }
 
+restoreDriveSessionFromCookie();
 applyProviderDefaults(aiProviderSelect.value);
 
 if (menuIcon && navbar) {
@@ -59,6 +62,11 @@ aiProviderSelect.addEventListener('change', () => {
 
 connectDriveBtn.addEventListener('click', async () => {
   try {
+    if (driveAccessToken) {
+      appendMessage('AI', 'Drive session already active. Refreshing files...');
+      await loadDriveFiles();
+      return;
+    }
     const clientId = googleClientIdInput.value.trim();
     if (!clientId) {
       appendMessage('AI', 'Please enter your Google OAuth Client ID first.');
@@ -80,12 +88,13 @@ connectDriveBtn.addEventListener('click', async () => {
         }
 
         driveAccessToken = response.access_token;
+        rememberDriveSession(clientId);
         appendMessage('AI', 'Google Drive connected. Loading files...');
         await loadDriveFiles();
       }
     });
 
-    tokenClient.requestAccessToken({ prompt: 'consent' });
+    requestDriveTokenWithPrompt('consent');
   } catch (error) {
     appendMessage('AI', `Drive setup error: ${error.message}`);
   }
@@ -174,6 +183,78 @@ chatForm.addEventListener('submit', async (event) => {
     appendMessage('AI', `Request failed: ${error.message}`);
   }
 });
+
+
+function restoreDriveSessionFromCookie() {
+  const remembered = getCookie(DRIVE_CONNECTED_COOKIE) === '1';
+  const rememberedClientId = getCookie(DRIVE_CLIENT_COOKIE);
+
+  if (!remembered || !rememberedClientId) {
+    return;
+  }
+
+  if (!googleClientIdInput.value) {
+    googleClientIdInput.value = rememberedClientId;
+  }
+
+  if (!looksLikeGoogleClientId(googleClientIdInput.value.trim())) {
+    return;
+  }
+
+  if (!(window.google && google.accounts && google.accounts.oauth2)) {
+    setTimeout(restoreDriveSessionFromCookie, 500);
+    return;
+  }
+
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: googleClientIdInput.value.trim(),
+    scope: 'https://www.googleapis.com/auth/drive.readonly',
+    callback: async (response) => {
+      if (response.error) {
+        if (response.error !== 'interaction_required') {
+          appendMessage('AI', `Drive session restore failed: ${friendlyDriveError(response.error)}`);
+        }
+        return;
+      }
+
+      driveAccessToken = response.access_token;
+      appendMessage('AI', 'Drive session restored from memory.');
+      await loadDriveFiles();
+    }
+  });
+
+  requestDriveTokenWithPrompt('');
+}
+
+function requestDriveTokenWithPrompt(promptValue) {
+  if (!tokenClient) {
+    return;
+  }
+
+  const options = promptValue ? { prompt: promptValue } : {};
+  tokenClient.requestAccessToken(options);
+}
+
+function rememberDriveSession(clientId) {
+  setCookie(DRIVE_CONNECTED_COOKIE, '1', 30);
+  setCookie(DRIVE_CLIENT_COOKIE, clientId, 30);
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + (days * 24 * 60 * 60 * 1000)).toUTCString();
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+}
+
+function getCookie(name) {
+  const key = `${encodeURIComponent(name)}=`;
+  const parts = document.cookie.split(';').map((part) => part.trim());
+  for (const part of parts) {
+    if (part.startsWith(key)) {
+      return decodeURIComponent(part.slice(key.length));
+    }
+  }
+  return '';
+}
 
 function applyProviderDefaults(provider) {
   if (!llmModelInput.value) {
