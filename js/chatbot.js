@@ -10,11 +10,25 @@ const useDriveContextCheckbox = document.getElementById('useDriveContext');
 const menuIcon = document.getElementById('menu-icon');
 const navbar = document.querySelector('.navbar');
 
+const DEFAULT_GEMINI_API_KEY = 'AIzaSyDNn9hOuX-c_H4_jdlWYtq51Fjt1QAfbwE';
+const DEFAULT_GOOGLE_CLIENT_ID = '513140257536-7e9dus3vgcnkvon2cvk16a6egr56s5n2.apps.googleusercontent.com';
+
 let tokenClient;
 let driveAccessToken = '';
 let driveFiles = [];
+let lastSystemMessage = '';
+let lastSystemMessageAt = 0;
+const SYSTEM_MESSAGE_COOLDOWN_MS = 4000;
 
 appendMessage('AI', 'Ready. Add your Gemini API key, then ask a question.');
+
+if (!geminiApiKeyInput.value) {
+  geminiApiKeyInput.value = DEFAULT_GEMINI_API_KEY;
+}
+
+if (!googleClientIdInput.value) {
+  googleClientIdInput.value = DEFAULT_GOOGLE_CLIENT_ID;
+}
 
 if (menuIcon && navbar) {
   menuIcon.addEventListener('click', () => {
@@ -262,25 +276,38 @@ async function askGemini({ apiKey, question, driveContext, pdfParts }) {
   const systemInstruction = 'You are a helpful enterprise assistant. Use Drive context/PDF content when provided, and mention which source type you used.';
 
   if (driveContext) {
-    parts.push({ text: `Drive text context:\n${driveContext}` });
+    parts.push({ text: `Drive text context:
+${driveContext}` });
   }
 
   if (pdfParts?.length) {
     parts.push(...pdfParts);
   }
 
-  parts.push({ text: `User question:\n${question}` });
+  parts.push({ text: `User question:
+${question}` });
 
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      contents: [{ role: 'user', parts }]
-    })
+  const body = JSON.stringify({
+    systemInstruction: { parts: [{ text: systemInstruction }] },
+    contents: [{ role: 'user', parts }]
   });
 
-  if (!response.ok) {
+  const modelsToTry = await resolveCandidateModels(apiKey);
+  let lastStatus = 0;
+  let lastPayload = null;
+
+  for (const model of modelsToTry) {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
+    }
+
     let errorPayload = null;
     try {
       errorPayload = await response.json();
@@ -288,15 +315,52 @@ async function askGemini({ apiKey, question, driveContext, pdfParts }) {
       errorPayload = null;
     }
 
-    const friendly = friendlyGeminiError(response.status, errorPayload);
-    throw new Error(friendly);
+    lastStatus = response.status;
+    lastPayload = errorPayload;
+
+    if (response.status !== 404) {
+      break;
+    }
   }
 
-  const data = await response.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
+  const friendly = friendlyGeminiError(lastStatus, lastPayload);
+  throw new Error(friendly);
+}
+
+async function resolveCandidateModels(apiKey) {
+  const preferredModels = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(apiKey)}`);
+  if (!response.ok) {
+    return preferredModels;
+  }
+
+  const payload = await response.json();
+  const available = (payload.models || [])
+    .filter((model) => (model.supportedGenerationMethods || []).includes('generateContent'))
+    .map((model) => (model.name || '').replace(/^models\//, ''))
+    .filter(Boolean);
+
+  if (!available.length) {
+    return preferredModels;
+  }
+
+  const prioritized = preferredModels.filter((name) => available.includes(name));
+  const remaining = available.filter((name) => !prioritized.includes(name));
+  return [...prioritized, ...remaining];
 }
 
 function appendMessage(sender, text, cssClass = 'ai') {
+  if (sender === 'AI' && cssClass === 'ai') {
+    const now = Date.now();
+    if (text === lastSystemMessage && now - lastSystemMessageAt < SYSTEM_MESSAGE_COOLDOWN_MS) {
+      return;
+    }
+
+    lastSystemMessage = text;
+    lastSystemMessageAt = now;
+  }
+
   const bubble = document.createElement('div');
   bubble.className = `message ${cssClass}`;
   bubble.textContent = `${sender}: ${text}`;
@@ -350,6 +414,10 @@ function friendlyGeminiError(status, payload) {
 
   if (status === 403) {
     return 'Gemini request was forbidden. Check API key restrictions and ensure the Generative Language API is enabled.';
+  }
+
+  if (status === 404) {
+    return 'Gemini model was not found for this API version. The app will try available models automatically, but your API key/project may not have access to supported models yet.';
   }
 
   if (status === 429) {
