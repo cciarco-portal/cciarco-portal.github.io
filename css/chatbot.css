@@ -1,8 +1,8 @@
 .chat-page {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 390px 1fr;
   gap: 1.6rem;
-  padding: 9rem 3rem 2rem;
+  padding: 9rem 2rem 2rem;
   min-height: 100vh;
 }
 
@@ -25,9 +25,7 @@
   color: #ccd6e0;
 }
 
-.field-group {
-  margin-top: 1.2rem;
-}
+.field-group { margin-top: 1.1rem; }
 
 .field-group label {
   display: block;
@@ -35,7 +33,9 @@
   margin-bottom: 0.4rem;
 }
 
-.field-group input {
+.field-group input,
+.field-group select,
+#knowledgeUpload {
   width: 100%;
   border: 1px solid #4b5a6f;
   border-radius: 8px;
@@ -44,6 +44,8 @@
   background: #1f242d;
   font-size: 1.3rem;
 }
+
+#knowledgeUpload { margin-top: 0.8rem; }
 
 .setup-actions {
   margin-top: 1.2rem;
@@ -68,20 +70,11 @@
   cursor: pointer;
 }
 
-.btn-primary {
-  background: #0ef;
-  color: #1f242d;
-  font-weight: 600;
-}
+.btn-primary { background: #0ef; color: #1f242d; font-weight: 600; }
+.btn-secondary { background: #445267; color: #fff; }
 
-.btn-secondary {
-  background: #445267;
-  color: #fff;
-}
-
-.drive-panel {
-  margin-top: 1.6rem;
-}
+.drive-panel,
+.upload-panel { margin-top: 1.4rem; }
 
 .drive-header {
   display: flex;
@@ -91,14 +84,14 @@
 
 .drive-file-list {
   margin-top: 1rem;
-  max-height: 220px;
+  max-height: 160px;
   overflow-y: auto;
   padding-left: 0;
   list-style: none;
 }
 
 .drive-file-list li {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 0.6rem;
   display: flex;
   gap: 0.6rem;
@@ -107,7 +100,7 @@
 .chat-panel {
   display: flex;
   flex-direction: column;
-  min-height: 70vh;
+  min-height: 72vh;
 }
 
 .chat-log {
@@ -123,27 +116,16 @@
   margin-bottom: 1rem;
   padding: 0.9rem 1rem;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 82%;
   font-size: 1.35rem;
   line-height: 1.5;
   white-space: pre-wrap;
 }
 
-.message.user {
-  margin-left: auto;
-  background: #0ef;
-  color: #1f242d;
-}
+.message.user { margin-left: auto; background: #0ef; color: #1f242d; }
+.message.ai { background: #3a4657; color: #fff; }
 
-.message.ai {
-  background: #3a4657;
-  color: #fff;
-}
-
-.chat-input-row {
-  display: flex;
-  gap: 0.8rem;
-}
+.chat-input-row { display: flex; gap: 0.8rem; }
 
 #userInput {
   flex: 1;
@@ -155,9 +137,9 @@
   font-size: 1.4rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .chat-page {
     grid-template-columns: 1fr;
-    padding: 8rem 1.2rem 1.2rem;
+    padding: 8rem 1rem 1rem;
   }
 }
